@@ -60,6 +60,4 @@ Excelerate, St. Louis, MO
 - **Power BI for Data Analytics** – Completed July 2023
 - **Python for Data Science and Machine Learning** – Coursera, May 2023
 
----
 
-Feel free to adjust the formatting or add any additional information you think is relevant!
