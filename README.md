@@ -40,7 +40,7 @@ Excelerate, St. Louis, MO
 
 ### Projects
 
-[Predicting Life Expectancy: A Comprehensive Analysis Using OLS and Logit Regression Models](https://google.com)
+[Predicting Life Expectancy: A Comprehensive Analysis Using OLS and Logit Regression Models](https://hub.ovh2.mybinder.org/user/ashokmedasani-p-life-expectancy-78b5d8p3/lab/tree/life_expectancy_assignment%20(1).ipynb)
 
 The objective of this project is to predict life expectancy based on various health and environmental factors using two key statistical models: Ordinary Least Squares (OLS) regression for continuous prediction and Logit regression for binary classification of life expectancy into ‘High’ or ‘Low’ categories. This project involves multiple stages, including thorough data preprocessing, exploratory data analysis (EDA), model development, and performance evaluation. Visualizations will be used to assess model accuracy and interpret the results. The findings from both models will be documented in a detailed report to highlight the impact of different factors on life expectancy and the effectiveness of the predictive models.
 
