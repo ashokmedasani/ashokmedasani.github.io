@@ -40,6 +40,11 @@ Excelerate, St. Louis, MO
 
 ### Projects
 
+[Predicting Life Expectancy: A Comprehensive Analysis Using OLS and Logit Regression Models](https://google.com)
+
+The objective of this project is to predict life expectancy based on various health and environmental factors using two key statistical models: Ordinary Least Squares (OLS) regression for continuous prediction and Logit regression for binary classification of life expectancy into ‘High’ or ‘Low’ categories. This project involves multiple stages, including thorough data preprocessing, exploratory data analysis (EDA), model development, and performance evaluation. Visualizations will be used to assess model accuracy and interpret the results. The findings from both models will be documented in a detailed report to highlight the impact of different factors on life expectancy and the effectiveness of the predictive models.
+
+
 **Sales Insight Hub: Interactive Dashboard for Data-Driven Decision Making**  
 - Developed interactive sales data dashboards using Power BI and Tableau, improving reporting efficiency by 20%.
 - Created visualizations for key sales metrics, enabling executive-level decision-making and driving a 15% increase in sales forecasting accuracy.
