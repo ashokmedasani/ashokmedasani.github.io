@@ -1,5 +1,5 @@
 **ASHOK MEDASANI**  
-(314) 773 - 9963 | medasaniashok1@gmail.com | LinkedIn
+(314) 773 - 9963 | medasaniashok1@gmail.com | LinkedIn[https://www.linkedin.com/in/ashok-medasani/]
 
 ---
 
