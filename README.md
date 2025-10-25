@@ -3,7 +3,7 @@
 📍 **St. Louis, MO**  
 📞 (314) 773-9963  
 ✉️ [medasaniashok4@gmail.com](mailto:medasaniashok4@gmail.com)  
-🔗 [LinkedIn](#) *(Add your LinkedIn URL here)*  
+🔗 [LinkedIn](#) *(https://www.linkedin.com/in/ashok-medasani/)*  
 
 ---
 
