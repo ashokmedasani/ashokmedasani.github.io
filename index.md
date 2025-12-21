@@ -14,9 +14,11 @@ layout: default
 
     <div class="quick-links">
       <a class="btn" href="mailto:medasaniashok4@gmail.com">Email</a>
-      <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://github.com/ashokmedasani" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://huggingface.co/ashokmedasani" target="_blank">Hugging Face</a>
       <a class="btn primary" href="https://drive.google.com/YOUR-RESUME-LINK" target="_blank">Resume (PDF)</a>
     </div>
+
 
     <p class="meta">📍 St. Louis, MO • 📞 (314) 773-9963</p>
   </div>
