@@ -1,0 +1,114 @@
+/* ---------- HERO ---------- */
+.hero {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 10px 0 18px;
+}
+
+.banner {
+  width: 100%;
+  height: 190px;
+  border-radius: 18px;
+  object-fit: cover;
+  margin: 6px 0 18px;
+  border: 1px solid rgba(0,0,0,0.10);
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.9);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.hero h1 { margin: 0; }
+.subtitle { font-size: 1.12rem; opacity: 0.9; margin: 6px 0 10px; }
+
+.meta { opacity: 0.9; margin: 6px 0 0; }
+
+/* ---------- BUTTONS ---------- */
+.quick-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 6px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn.primary {
+  border: none;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* ---------- TABS ---------- */
+.tabs { margin-top: 12px; }
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.tab-btn {
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.tab-btn.active {
+  border: 1px solid rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.7);
+}
+
+.tab-panel { display: none; padding: 10px 0; }
+.tab-panel.active { display: block; }
+
+/* ---------- CARDS ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.card {
+  padding: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.55);
+}
+
+.card h3 { margin-top: 0; }
+.small { opacity: 0.85; margin-top: -6px; }
+.link { text-decoration: none; font-weight: 900; }
+
+/* ---------- EXPERIENCE BLOCKS ---------- */
+.xp {
+  border-left: 4px solid rgba(0,0,0,0.12);
+  padding-left: 14px;
+  margin: 16px 0;
+}
+
+.xp h3 { margin-bottom: 4px; }
+.xp .role-meta { opacity: 0.85; margin-top: 0; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .cards { grid-template-columns: 1fr; }
+  .banner { height: 140px; }
+}
