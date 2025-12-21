@@ -4,34 +4,32 @@ async function loadSection(file) {
 
   try {
     const res = await fetch(file, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load: ${file}`);
+    if (!res.ok) throw new Error(`Missing file: ${file}`);
     const html = await res.text();
     content.innerHTML = html;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   } catch (e) {
     content.innerHTML = `
-      <h2>Could not load section</h2>
+      <h2>Section not found</h2>
       <p class="muted">${e.message}</p>
-      <p class="muted">Make sure <b>${file}</b> exists in your repo.</p>
+      <p class="muted">Create <b>${file}</b> inside <b>/sections</b>.</p>
     `;
   }
 }
 
-function setActiveTab(clickedBtn) {
+function setActive(btn) {
   document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-  clickedBtn.classList.add("active");
+  btn.classList.add("active");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tab");
-
   tabs.forEach(btn => {
     btn.addEventListener("click", () => {
-      setActiveTab(btn);
+      setActive(btn);
       loadSection(btn.dataset.file);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
-  // Default load Summary
   loadSection("sections/summary.html");
 });
