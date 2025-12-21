@@ -1,110 +1,46 @@
-# 👋 Hi, I'm Ashok Medasani  
+# Ashok Medasani
+📍 St. Louis, MO • 📧 medasaniashok4@gmail.com • 📞 (314) 773-9963 • 🔗 LinkedIn • 📄 Resume (PDF)
 
-📍 **St. Louis, MO**  
-📞 (314) 773-9963  
-✉️ [medasaniashok4@gmail.com](mailto:medasaniashok4@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/ashok-medasani/)
+> Paste your banner image and profile photo links here later.
 
----
+## Summary
+Technical Data Analyst with 3+ years of experience delivering enterprise-scale data pipelines, analytics automation, compliance reporting, and executive dashboards using Python, SQL, Power BI, Snowflake, AWS (S3, RDS), Airflow, and ETL/ELT frameworks. Proven track record supporting 20+ production systems, maintaining 99.9%+ data reliability, improving audit readiness by 40%, and reducing manual reporting effort by 1,000+ hours annually.
 
-## 🧩 Professional Summary  
+## Skills
+- Data Analysis & ML: Predictive Modeling, Regression, Classification, Clustering, A/B Testing, Anomaly Detection, Statistical Inference, Feature Engineering
+- Programming: Python (Pandas, NumPy, Scikit-learn), SQL, R, JavaScript
+- Data Engineering: ETL/ELT, MySQL, PostgreSQL, Snowflake, MongoDB, ElasticSearch, Alteryx, Talend
+- BI & Reporting: Power BI, Tableau, Looker Studio, Matplotlib, Seaborn, Plotly, Excel (Macros, Pivot Tables, VLOOKUP, Power Query)
+- Automation: Airflow, Django, DBT, REST APIs, Jupyter, Git
+- Cloud & Collab: AWS (S3, RDS, QuickSight), GCP (BigQuery), Azure Data Studio, Jira, Confluence
+- Enterprise: SOX, PII-safe reporting, RBAC, ITSM, Change Mgmt, Agile/Scrum, Lotus Notes
 
-- Results-driven **Data and Business Analyst** with **3+ years of experience** applying SQL, Python, and advanced Excel to develop data-driven solutions across **banking, SaaS, and startup ecosystems**.  
-- Skilled in automating ETL workflows, building interactive dashboards using **Power BI, Tableau, and Google Data Studio**, and designing analytical tools to improve campaign and operations performance.  
-- Proven success in cross-functional collaboration to streamline business reporting, improve stakeholder visibility, and deploy predictive models that drive key business outcomes.  
-- Experienced in implementing **A/B testing, KPI frameworks, and real-time monitoring dashboards** aligned with business intelligence and strategic reporting requirements.  
+## Experience
+**Bank of America — Technical Data Analyst II (Officer)** (Nov 2021 – Jul 2024)  
+- Supported 20+ platforms with anomaly detection; sustained 99.98% uptime  
+- Improved audit readiness by 40% with compliance ETL  
+- Saved 1,000+ hours annually with Django analytics platform  
+- Reduced MTTR by 25%; improved early detection by 30%  
 
----
+**Excelerate — Data Analyst Intern** (Jul 2024 – Aug 2024)  
+- Dashboards for 10 campaigns; fixed 17% data issues  
+- Improved engagement by 11%; saved 13 hours/week  
 
-## 🧠 Technical Skills  
+**Excelerate — Project Management Intern** (Aug 2024 – Sep 2024)  
+- Reduced execution delays by ~20% with tracking systems  
 
-**Data Analysis & ML:** Predictive Modeling, Clustering, Regression, A/B Testing, Anomaly Detection, Statistical Inference  
-**Visualization & BI Tools:** Power BI, Tableau, Google Looker Studio, Matplotlib, Seaborn, Plotly, Excel (Macros, Pivot Tables, VLOOKUP)  
-**Programming:** Python (Pandas, NumPy, Scikit-learn), R, SQL, JavaScript, HTML, CSS  
-**Databases & ETL:** MySQL, PostgreSQL, Snowflake, MongoDB, ElasticSearch, Alteryx, Talend  
-**Automation & Workflow:** Apache Airflow, Django, DBT, REST APIs, Jupyter, Git  
-**Cloud & Collaboration:** AWS (S3, RDS, QuickSight), GCP (BigQuery), Azure Data Studio, Jira, Confluence  
-**Project Management:** Agile, Scrum, ITSM, Change Management, Lotus Notes  
+**KreditBee — Data Analyst Intern** (Jan 2020 – Aug 2021)  
+- Automated ETL, improved SLA by 16%, increased completion by 15%  
 
----
+## Projects
+- Predicting Purchase Behavior (Random Forest) — 100k sessions, 18% higher conversion segments, 22% churn-prone cohorts  
+- TitanForge Predictive Maintenance — 98.1% accuracy, 27% downtime reduction  
+- Enterprise Excel Automation Platform — 300+ hours saved/quarter, 12% KPI inconsistencies detected  
 
-## 💼 Professional Experience  
+## Education
+M.S. Analytics — Saint Louis University (Sep 2024 – Jul 2026)  
+B.Tech CS — SRM Institute of Science and Technology (Jul 2017 – Jun 2021)  
 
-### **Data Analyst Intern**  
-**Excelerate – St. Louis, MO**  
-📅 *Jul 2024 – Aug 2024*  
-- Built CRM dashboards in Google Data Studio to improve campaign visibility and performance analysis for regional managers.  
-- Cleaned outreach data using Python, resolving inconsistencies and improving segmentation strategies.  
-- Conducted cohort analysis and drop-off tracking that led to a **15% improvement in engagement**.  
-- Automated reporting with reusable templates, saving manual hours and standardizing delivery.  
-- Delivered visual reports for non-technical teams and influenced retargeting campaigns with data-backed insights.  
-
----
-
-### **Project Management Intern**  
-**Excelerate – St. Louis, MO**  
-📅 *Aug 2024 – Sep 2024*  
-- Built Excel Gantt charts and dependency maps to track speaker coordination, venue timelines, and sponsorship deadlines, reducing delivery delays by **20%**.  
-- Automated milestone tracking through Power BI dashboards, enabling dynamic PM decision-making.  
-- Created RACI matrices and modeled timeline contingencies, supporting efficient scenario planning.  
-- Delivered retrospective reports and best practices documentation for future campaign rollouts.  
-
----
-
-### **Technical Analyst II (Officer)**  
-**Bank of America (BA Continuum India Pvt Ltd) – Chennai, India**  
-📅 *Nov 2021 – Jul 2024*  
-- Proactively monitored HP Non-Stop systems, ensuring **99.98% uptime** by mitigating performance anomalies.  
-- Automated compliance reporting and QA via Power BI and Excel Macros, reducing QA time by **40%**.  
-- Built a Django-based tool converting Excel workflows into web forms, reclaiming **100+ monthly hours**.  
-- Conducted behavioral analysis using ElasticSearch and Python to detect server failures and login anomalies.  
-- Standardized SOPs and built diagnostic scripts to accelerate root cause analysis and escalation response.  
-
----
-
-### **Data Analyst Intern**  
-**KreditBee – Chennai, India**  
-📅 *Jan 2020 – Aug 2021*  
-- Analyzed borrower data with SQL and Python to identify risk segments, reducing NPA exposure.  
-- Created Power BI dashboards for real-time loan issuance and repayment insights.  
-- Automated ETL flows, shortening monthly reporting cycles by **65%**.  
-- Conducted funnel drop-off analysis that improved application completion by **15%**.  
-
----
-
-## 🧪 Projects  
-
-### **Predicting Purchase Behavior from Web Activity**  
-**Tools:** Python, Pandas, Random Forest, Scikit-learn  
-- Built a Random Forest model on session data, achieving **R² = 0.92**.  
-- Designed segmentation matrices for personalized targeting in marketing campaigns.  
-
----
-
-### **TitanForge: Aerospace Predictive Maintenance**  
-**Tools:** Python, Gradient Boosting, Plotly, Time Series  
-- Developed anomaly detection workflows with **98.1% accuracy**.  
-- Built real-time dashboards to alert engineers and prevent component faults.  
-
----
-
-### **Hours Saved: Excel Workflow Automation**  
-**Tools:** Django, Pandas, OpenPyXL, Excel Automation  
-- Created a Django-based automation tool that structured KPI exports from raw Excel data.  
-- Saved **300+ hours per quarter** and built user-friendly documentation for adoption.  
-
----
-
-## 🎓 Education  
-
-**Master of Science in Analytics**  
-*Saint Louis University – St. Louis, MO*  
-📅 *Sep 2024 – Jul 2026*  
-
-**Bachelor of Technology in Computer Science**  
-*SRM Institute of Science and Technology – Chennai, India*  
-📅 *Jul 2017 – Jun 2021*  
-
----
-
-⭐ *Thanks for visiting my profile! I’m passionate about data-driven innovation, predictive analytics, and automation that drives real-world impact.*  
+## Certifications
+- CAPM — 2025  
+- Microsoft DP-203 — 2024
