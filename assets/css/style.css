@@ -26,8 +26,13 @@ body{
 }
 
 .page{min-height:100vh}
-.container{max-width:var(--wrap); margin:0 auto; padding:0 16px}
 
+/* IMPORTANT: use this everywhere in HTML */
+.container{
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
 /* -------- Falling icons (background) -------- */
 #iconRain{
@@ -63,6 +68,7 @@ body{
 }
 
 .profile-card{
+  width: 100%;
   position: relative;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -122,6 +128,7 @@ body{
   max-width: 78ch;
 }
 
+/* Right buttons */
 .top-actions{
   display:flex;
   gap:10px;
@@ -129,7 +136,6 @@ body{
   justify-content:flex-end;
   flex-wrap:wrap;
 }
-
 
 /* Icons inside buttons */
 .icon{
@@ -161,14 +167,19 @@ body{
   border-color: rgba(79,140,255,.55);
 }
 
-/* Contact row */
+/* ✅ Contact row centered (this is what you asked) */
 .contact-row{
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
+
   display:flex;
   flex-wrap:wrap;
-  gap: 12px 18px;
+  gap: 12px 22px;
+
+  justify-content: center;   /* CENTER */
+  align-items: center;       /* vertically align */
+  text-align: center;
 }
 
 .contact-item{
@@ -226,10 +237,12 @@ body{
   margin-top: 18px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
+
   display:flex;
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
+
   margin-bottom: 10px;
 }
 
@@ -258,59 +271,50 @@ body{
 .main{
   position: relative;
   z-index: 2;
-
-  /* Only vertical padding here (horizontal comes from .wrap) */
-  padding: 8px 0 24px;
+  padding: 12px 0 28px; /* nice spacing under header */
   margin: 0;
 }
 
-/* section card aligned inside wrap */
-/* Card shell */
+/* Section card shell */
 .section-card{
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: linear-gradient(180deg, var(--card), var(--card2));
   box-shadow: var(--shadow);
-  margin: 0;
-  overflow: hidden;   /* IMPORTANT: prevents overflow glitches */
+  overflow: hidden;
 }
 
-/* Content area inside card */
+/* Section content */
 .section-inner{
-  padding: 18px;      /* padding moved here */
+  padding: 18px;
   min-height: 260px;
   overflow-wrap: anywhere;
 }
 
-/* Hard reset for loaded section content */
-.section-inner > *{
-  max-width: 100%;
-}
-
+/* Clean typography for loaded sections (NO duplicate .section-card rules) */
 .section-inner h1,
 .section-inner h2,
 .section-inner h3{
-  margin-top: 0;
-  margin-left: 0;
+  margin: 0 0 12px;
+}
+
+.section-inner p{
+  margin: 10px 0;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .section-inner ul,
 .section-inner ol{
-  margin-left: 0;
+  margin: 10px 0 0;
   padding-left: 18px;
 }
 
-
-@keyframes fade{
-  from{opacity:.65; transform: translateY(6px)}
-  to{opacity:1; transform: translateY(0)}
+.section-inner li{
+  margin: 8px 0;
+  line-height: 1.55;
 }
-
-.section-card h2{margin:0 0 12px}
-.section-card .muted{color: var(--muted)}
-.section-card ul{margin: 8px 0 0; padding-left: 18px}
-.section-card li{margin: 8px 0; line-height:1.55}
 
 /* Responsive */
 @media (max-width: 900px){
@@ -323,6 +327,10 @@ body{
     grid-column: 1 / -1;
     justify-content: flex-start;
     margin-top: 10px;
+  }
+  .contact-row{
+    justify-content: flex-start; /* on mobile it looks better left */
+    text-align: left;
   }
 }
 
