@@ -12,7 +12,7 @@ async function loadSection(file) {
     content.innerHTML = `
       <h2>Section not found</h2>
       <p class="muted">${e.message}</p>
-      <p class="muted">Create <b>${file}</b> inside <b>/sections</b>.</p>
+      <p class="muted">Create <b>${file}</b> inside <b>/sections</b> folder.</p>
     `;
   }
 }
@@ -75,20 +75,28 @@ function startIconRain() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Tabs
+  // First, create the icon rain
+  startIconRain();
+
+  // Then, handle tabs
   const tabs = document.querySelectorAll(".tab");
+  
+  // Check if we should load default content (only if content div is empty)
+  const contentDiv = document.getElementById("content");
+  if (!contentDiv.innerHTML.trim()) {
+    const activeTab = document.querySelector(".tab.active");
+    if (activeTab) {
+      loadSection(activeTab.dataset.file);
+    }
+  }
+
+  // Add click handlers to tabs
   tabs.forEach(btn => {
     btn.addEventListener("click", () => {
       setActive(btn);
       loadSection(btn.dataset.file);
     });
   });
-
-  // Default
-  loadSection("sections/summary.html");
-
-  // Rain effect
-  startIconRain();
 
   // Rebuild on resize (keeps left/right bands consistent)
   let resizeTimer;
