@@ -193,6 +193,39 @@ body{
 }
 .about-block h2{margin:0 0 10px; font-size: 1.15rem}
 .about-block p{margin: 8px 0; color: var(--muted); line-height:1.6}
+/* Tabs after About */
+.tabs-container{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  font-weight: 1000;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.tab:hover{
+  background: rgba(255,255,255,.08);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.tab.active{
+  color: var(--text);
+  border-color: rgba(79,140,255,.65);
+  background: rgba(79,140,255,.20);
+}
 
 /* Main content */
 .main{
@@ -220,22 +253,6 @@ body{
 .section-card ul{margin: 8px 0 0; padding-left: 18px}
 .section-card li{margin: 8px 0; line-height:1.55}
 
-/* Bottom Tabs */
-.bottom-tabs{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  display:flex;
-  justify-content:center;
-  gap: 10px;
-  flex-wrap:wrap;
-  padding: 10px 12px;
-  background: rgba(11,18,32,.88);
-  border-top: 1px solid var(--line);
-  backdrop-filter: blur(12px);
-}
 
 .tab{
   padding: 10px 12px;
