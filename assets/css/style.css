@@ -35,6 +35,17 @@ body{
   z-index: 0;
 }
 
+/* Button icons */
+.icon{
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+
 .rain-icon{
   position: absolute;
   top: -40px;
