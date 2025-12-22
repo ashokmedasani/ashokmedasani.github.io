@@ -26,7 +26,8 @@ body{
 }
 
 .page{min-height:100vh}
-.wrap{max-width:var(--wrap); margin:0 auto; padding:0 16px}
+.container{max-width:var(--wrap); margin:0 auto; padding:0 16px}
+
 
 /* -------- Falling icons (background) -------- */
 #iconRain{
@@ -264,18 +265,41 @@ body{
 }
 
 /* section card aligned inside wrap */
+/* Card shell */
 .section-card{
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: linear-gradient(180deg, var(--card), var(--card2));
   box-shadow: var(--shadow);
-  padding: 18px;
-  margin: 0;                 /* important: no side margins */
+  margin: 0;
+  overflow: hidden;   /* IMPORTANT: prevents overflow glitches */
+}
+
+/* Content area inside card */
+.section-inner{
+  padding: 18px;      /* padding moved here */
   min-height: 260px;
   overflow-wrap: anywhere;
 }
 
+/* Hard reset for loaded section content */
+.section-inner > *{
+  max-width: 100%;
+}
+
+.section-inner h1,
+.section-inner h2,
+.section-inner h3{
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.section-inner ul,
+.section-inner ol{
+  margin-left: 0;
+  padding-left: 18px;
+}
 
 
 @keyframes fade{
