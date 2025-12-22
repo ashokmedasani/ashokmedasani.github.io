@@ -25,7 +25,11 @@ body{
     var(--bg);
 }
 
-.page{min-height:100vh}
+.page{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
 /* IMPORTANT: use this everywhere in HTML */
 .container{
@@ -36,8 +40,11 @@ body{
 
 /* -------- Falling icons (background) -------- */
 #iconRain{
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
