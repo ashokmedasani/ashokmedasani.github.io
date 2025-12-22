@@ -111,20 +111,55 @@ body{
   margin-top: 14px;
 }
 
-.top-row{
+/* Header row: avatar | details | buttons */
+.header-row{
   display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
+  grid-template-columns: 96px 1fr auto;
   gap: 16px;
+  align-items: center;
 }
 
-/* Top-right action row */
+/* Details in center */
+.details h1{
+  margin: 0;
+  font-size: 1.85rem;
+  letter-spacing: .2px;
+}
+
+.details .headline{
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 78ch;
+}
+
+/* Buttons on right */
 .top-actions{
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
+}
+
+/* Contact row below */
+.contact-row{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* Mobile: stack cleanly */
+@media (max-width: 900px){
+  .header-row{
+    grid-template-columns: 84px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .top-actions{
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
 }
 
 
@@ -180,15 +215,6 @@ body{
 .btn.primary{
   border-color: rgba(79,140,255,.55);
   background: rgba(79,140,255,.18);
-}
-
-.contact-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 12px 18px;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
 }
 
 .contact-item{
@@ -286,21 +312,7 @@ body{
   background: rgba(79,140,255,.20);
 }
 
-/* Responsive */
-@media (max-width: 900px){
-  .avatar{width:84px; height:84px}
-}
 
-@media (max-width: 900px){
-  .top-row{
-    grid-template-columns: 1fr;
-  }
-
-  .top-actions{
-    justify-content: flex-start;
-    margin-top: 12px;
-  }
-}
 
 /* Resume highlight block at end of About */
 .resume-callout{
