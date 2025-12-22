@@ -129,6 +129,7 @@ body{
   flex-wrap:wrap;
 }
 
+
 /* Icons inside buttons */
 .icon{
   width: 18px;
@@ -252,24 +253,30 @@ body{
   background: rgba(79,140,255,.20);
 }
 
-/* Main content area: THIS FIXES YOUR BIG GAP */
+/* Main content area */
 .main{
   position: relative;
   z-index: 2;
-  padding: 8px 16px 24px; /* small padding so content sits right under tabs */
+
+  /* Only vertical padding here (horizontal comes from .wrap) */
+  padding: 8px 0 24px;
   margin: 0;
 }
 
+/* section card aligned inside wrap */
 .section-card{
+  width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: linear-gradient(180deg, var(--card), var(--card2));
   box-shadow: var(--shadow);
   padding: 18px;
-  margin-top: 0;          /* IMPORTANT */
-  min-height: 260px;      /* enough but not huge */
-  animation: fade .18s ease-out;
+  margin: 0;                 /* important: no side margins */
+  min-height: 260px;
+  overflow-wrap: anywhere;
 }
+
+
 
 @keyframes fade{
   from{opacity:.65; transform: translateY(6px)}
