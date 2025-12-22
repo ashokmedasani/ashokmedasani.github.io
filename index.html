@@ -9,22 +9,17 @@
 </head>
 
 <body>
+  <!-- Subtle falling-icons background (left/right only) -->
+  <div id="iconRain" aria-hidden="true"></div>
+
   <div class="page">
-
-    <!-- TOP COVER -->
-    <section class="cover-wrap">
-      <div class="cover-img">
-        <img src="assets/img/cover.png" alt="Cover" onerror="this.style.display='none'">
-      </div>
-
-      <!-- PROFILE CARD (overlapping) -->
+    <!-- Header WITHOUT cover -->
+    <header class="header">
       <div class="wrap">
         <div class="profile-card">
 
-          <div class="avatar-overlap">
-            <div class="avatar-ring">
-              <img src="assets/img/profile.jpeg" alt="Ashok Medasani" onerror="this.style.display='none'">
-            </div>
+          <div class="avatar">
+            <img src="assets/img/profile.jpg" alt="Ashok Medasani" onerror="this.style.display='none'">
           </div>
 
           <div class="profile-content">
@@ -50,33 +45,21 @@
                    href="https://drive.google.com/file/d/1v_hIILN3yptuAs_rigy5gWc1_p85a1Dx/view?usp=drive_link">
                   📄 Resume
                 </a>
-                <a class="btn" target="_blank" rel="noreferrer"
-                   href="https://www.linkedin.com/">
-                  in LinkedIn
+                <a class="btn" target="_blank" rel="noreferrer" href="https://github.com/ashokmedasani">
+                  💻 GitHub
+                </a>
+                <a class="btn" target="_blank" rel="noreferrer" href="https://huggingface.co/ashokmedasani">
+                  🤗 Hugging Face
                 </a>
               </div>
             </div>
 
-            <!-- CONTACT ROW -->
             <div class="contact-row">
-              <a class="contact-item" href="#" aria-label="Location">
-                📍 <span>St. Louis, MO</span>
-              </a>
-              <a class="contact-item" href="tel:+13147739963" aria-label="Phone">
-                📞 <span>(314) 773-9963</span>
-              </a>
-              <a class="contact-item" href="mailto:medasaniashok4@gmail.com" aria-label="Email">
-                ✉️ <span>medasaniashok4@gmail.com</span>
-              </a>
-              <a class="contact-item" target="_blank" rel="noreferrer" href="https://github.com/ashokmedasani" aria-label="GitHub">
-                💻 <span>GitHub</span>
-              </a>
-              <a class="contact-item" target="_blank" rel="noreferrer" href="https://huggingface.co/ashokmedasani" aria-label="Hugging Face">
-                🤗 <span>Hugging Face</span>
-              </a>
+              <a class="contact-item" href="#" aria-label="Location">📍 <span>St. Louis, MO</span></a>
+              <a class="contact-item" href="tel:+13147739963" aria-label="Phone">📞 <span>(314) 773-9963</span></a>
+              <a class="contact-item" href="mailto:medasaniashok4@gmail.com" aria-label="Email">✉️ <span>medasaniashok4@gmail.com</span></a>
             </div>
 
-            <!-- ABOUT ME -->
             <div class="about-block">
               <h2>About</h2>
               <p>
@@ -93,26 +76,23 @@
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- CONTENT AREA -->
+    <!-- Content -->
     <main class="wrap main">
-      <div class="section-card" id="content">
-        <!-- loaded by JS -->
-      </div>
+      <div class="section-card" id="content"></div>
     </main>
 
-    <!-- BOTTOM TABS -->
+    <!-- Bottom Tabs -->
     <nav class="bottom-tabs" id="bottomTabs">
       <button class="tab active" data-file="sections/summary.html">Summary</button>
       <button class="tab" data-file="sections/experience.html">Experience</button>
-      <button class="tab" data-file="sections/education.html">Education</button>
       <button class="tab" data-file="sections/projects.html">Projects</button>
       <button class="tab" data-file="sections/skills.html">Skills</button>
       <button class="tab" data-file="sections/certifications.html">Certifications</button>
-      
+      <button class="tab" data-file="sections/education.html">Education</button>
+      <button class="tab" data-file="sections/contact.html">Contact</button>
     </nav>
-
   </div>
 
   <script src="assets/js/app.js"></script>
