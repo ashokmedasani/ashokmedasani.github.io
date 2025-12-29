@@ -384,6 +384,48 @@ body{
 }
 
 
+/* Skills section*/
+
+/* ---------- Skills Accordion ---------- */
+.skill-accordion details{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--card), var(--card2));
+  margin-bottom: 12px;
+  padding: 10px 14px;
+}
+
+.skill-accordion summary{
+  cursor: pointer;
+  font-weight: 1000;
+  color: var(--text);
+  list-style: none;
+  position: relative;
+}
+
+.skill-accordion summary::after{
+  content: "▾";
+  position: absolute;
+  right: 0;
+  color: var(--muted);
+  transition: transform .2s ease;
+}
+
+.skill-accordion details[open] summary::after{
+  transform: rotate(180deg);
+}
+
+.skill-accordion ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.skill-accordion li{
+  margin: 8px 0;
+  line-height: 1.55;
+}
+
+
 
 @media (max-width: 700px){
   .resume-callout{flex-direction: column; align-items: stretch;}
