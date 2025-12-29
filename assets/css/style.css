@@ -394,7 +394,7 @@ body{
 
 /* Body */
 .accordion .acc-body{
-  padding: 12px 14px 14px;
+  padding: 14px 20px 18px;
   border-top: 1px solid rgba(255,255,255,.10);
   color: var(--muted);
   line-height: 1.6;
@@ -410,7 +410,7 @@ body{
 
 .accordion ul{
   margin: 10px 0 0;
-  padding-left: 18px;
+  padding-left: 22px;
 }
 
 .accordion li{
