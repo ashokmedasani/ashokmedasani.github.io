@@ -105,3 +105,33 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeTimer = setTimeout(startIconRain, 250);
   });
 });
+
+
+const tabs = document.querySelectorAll(".tab");
+const content = document.getElementById("content");
+
+async function loadSection(file) {
+  const currentScrollY = window.scrollY; // ✅ remember scroll position
+
+  const res = await fetch(file);
+  const html = await res.text();
+
+  content.innerHTML = html;
+
+  // ✅ restore scroll position (prevents jump)
+  requestAnimationFrame(() => window.scrollTo(0, currentScrollY));
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", (e) => {
+    e.preventDefault(); // ✅ prevents default button/anchor behavior
+
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    loadSection(tab.dataset.file);
+  });
+});
+
+// initial load
+loadSection(document.querySelector(".tab.active")?.dataset.file || "sections/summary.html");

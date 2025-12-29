@@ -341,6 +341,50 @@ body{
   }
 }
 
+/* Experience section*/
+.accordion{
+  display: grid;
+  gap: 12px;
+}
+
+.acc-item{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  overflow: hidden;
+}
+
+.acc-title{
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 14px;
+  display: grid;
+  gap: 6px;
+  font-weight: 950;
+}
+
+.acc-title::-webkit-details-marker{ display:none; }
+
+.acc-meta{
+  display:block;
+  color: var(--muted);
+  font-weight: 750;
+  font-size: .95rem;
+}
+
+.acc-body{
+  padding: 0 14px 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.acc-item[open]{
+  border-color: rgba(79,140,255,.45);
+  background: rgba(79,140,255,.06);
+}
+
+
+
 @media (max-width: 700px){
   .resume-callout{flex-direction: column; align-items: stretch;}
   .resume-btn{text-align:center;}
