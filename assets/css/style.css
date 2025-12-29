@@ -393,8 +393,14 @@ body{
 }
 
 /* Body */
+
+.accordion .acc-meta,
+.accordion p.muted{
+  padding-left: 22px;
+}
+
 .accordion .acc-body{
-  padding: 14px 20px 18px;
+  padding: 14px 22px 18px;
   border-top: 1px solid rgba(255,255,255,.10);
   color: var(--muted);
   line-height: 1.6;
