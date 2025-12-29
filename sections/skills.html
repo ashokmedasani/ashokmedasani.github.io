@@ -1,15 +1,118 @@
 <h2>Skills</h2>
 
-<div class="pills">
-  <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">Power BI</span>
-  <span class="pill">Snowflake</span><span class="pill">AWS</span><span class="pill">Airflow</span>
+<!-- Skill Category Tabs -->
+<div class="skill-tabs" role="tablist" aria-label="Skill Categories">
+  <button class="skill-tab active" data-skill="analytics" role="tab" aria-selected="true">Data Analytics</button>
+  <button class="skill-tab" data-skill="engineering" role="tab" aria-selected="false">Data Engineering</button>
+  <button class="skill-tab" data-skill="ml" role="tab" aria-selected="false">ML & Deep Learning</button>
+  <button class="skill-tab" data-skill="bi" role="tab" aria-selected="false">BI & Visualization</button>
+  <button class="skill-tab" data-skill="automation" role="tab" aria-selected="false">Automation</button>
+  <button class="skill-tab" data-skill="cloud" role="tab" aria-selected="false">Cloud & Enterprise</button>
 </div>
 
-<ul>
-  <li><b>Data Analysis & ML:</b> Predictive Modeling, Regression, Classification, Clustering, A/B Testing, Anomaly Detection, Statistical Inference, Feature Engineering</li>
-  <li><b>Programming:</b> Python (Pandas, NumPy, Scikit-learn), SQL, R, JavaScript</li>
-  <li><b>Data Engineering:</b> ETL/ELT Pipelines, MySQL, PostgreSQL, Snowflake, MongoDB, ElasticSearch, Alteryx, Talend</li>
-  <li><b>BI & Reporting:</b> Power BI, Tableau, Looker Studio, Matplotlib, Seaborn, Plotly, Excel (Macros, Power Query, Pivot Tables)</li>
-  <li><b>Automation:</b> Apache Airflow, Django, DBT, REST APIs, Jupyter, Git</li>
-  <li><b>Enterprise:</b> SOX, Audit Reporting, PII-safe handling, RBAC, ITSM, Change Management, Agile/Scrum</li>
-</ul>
+<!-- Pills (changes by selected tab) -->
+<div class="pills" id="skillPills">
+  <!-- Filled by JS below -->
+</div>
+
+<!-- Skill Panels -->
+<div class="skill-panels">
+
+  <section class="skill-panel active" data-skill-panel="analytics" role="tabpanel">
+    <ul>
+      <li><b>Core Analytics:</b> KPI Frameworks, Cohort Analysis, Funnel Analysis, Segmentation, Root Cause Analysis</li>
+      <li><b>Experimentation:</b> A/B Testing, Hypothesis Testing, Statistical Inference</li>
+      <li><b>Modeling (Applied):</b> Regression, Classification, Clustering, Anomaly Detection, Feature Engineering</li>
+      <li><b>Tools:</b> Python, SQL, Excel (Power Query, Pivot Tables), R (basic)</li>
+    </ul>
+  </section>
+
+  <section class="skill-panel" data-skill-panel="engineering" role="tabpanel">
+    <ul>
+      <li><b>Pipelines:</b> ETL/ELT, Data Validation, Scheduling, Logging, Monitoring</li>
+      <li><b>Databases:</b> MySQL, PostgreSQL, Snowflake, MongoDB, ElasticSearch</li>
+      <li><b>Workflow:</b> Data Modeling, Schema Design, Performance Optimization</li>
+      <li><b>Tooling:</b> Airflow, DBT, REST APIs, Git</li>
+    </ul>
+  </section>
+
+  <section class="skill-panel" data-skill-panel="ml" role="tabpanel">
+    <ul>
+      <li><b>Machine Learning:</b> Supervised/Unsupervised Learning, Model Evaluation, Bias/Variance, Regularization</li>
+      <li><b>Deep Learning:</b> Neural Networks, CNN/RNN basics, Fine-tuning concepts</li>
+      <li><b>Libraries:</b> Scikit-learn, Pandas/NumPy, Hugging Face (basic), PyTorch/TensorFlow (learning)</li>
+      <li><b>Use Cases:</b> Predictive Modeling, Maintenance Analytics, Web Activity Modeling</li>
+    </ul>
+  </section>
+
+  <section class="skill-panel" data-skill-panel="bi" role="tabpanel">
+    <ul>
+      <li><b>Dashboards:</b> Executive Reporting, Drill-down KPIs, Operational Monitoring</li>
+      <li><b>Tools:</b> Power BI, Tableau, Looker Studio</li>
+      <li><b>Visualization:</b> Matplotlib, Seaborn, Plotly</li>
+      <li><b>Excel:</b> Macros, Pivot Tables, VLOOKUP, Power Query</li>
+    </ul>
+  </section>
+
+  <section class="skill-panel" data-skill-panel="automation" role="tabpanel">
+    <ul>
+      <li><b>Automation:</b> Reporting Automation, Workflow Standardization, Template Pipelines</li>
+      <li><b>Development:</b> Django, Python Scripting, Jupyter Notebooks</li>
+      <li><b>Integration:</b> REST APIs, Scheduled Jobs, Data Quality Checks</li>
+      <li><b>Collaboration:</b> Jira, Confluence</li>
+    </ul>
+  </section>
+
+  <section class="skill-panel" data-skill-panel="cloud" role="tabpanel">
+    <ul>
+      <li><b>AWS:</b> S3, RDS, QuickSight (working)</li>
+      <li><b>GCP:</b> BigQuery (familiar)</li>
+      <li><b>Enterprise:</b> ITSM, Change Management, Audit Reporting, SOX, RBAC, PII-safe handling</li>
+      <li><b>Process:</b> Agile/Scrum, Documentation, SOPs</li>
+    </ul>
+  </section>
+
+</div>
+
+<!-- Local JS only for this section -->
+<script>
+  (function () {
+    const pillsByTab = {
+      analytics: ["SQL", "Python", "A/B Testing", "Cohorts", "Segmentation", "Anomaly Detection"],
+      engineering: ["Airflow", "DBT", "ETL/ELT", "Snowflake", "PostgreSQL", "ElasticSearch"],
+      ml: ["Scikit-learn", "Feature Eng", "Random Forest", "Clustering", "Neural Nets", "Hugging Face"],
+      bi: ["Power BI", "Tableau", "Looker Studio", "Plotly", "Excel", "Dashboards"],
+      automation: ["Django", "Python", "REST APIs", "Jupyter", "Git", "Automation"],
+      cloud: ["AWS S3", "AWS RDS", "QuickSight", "BigQuery", "SOX", "RBAC"]
+    };
+
+    const tabs = document.querySelectorAll(".skill-tab");
+    const panels = document.querySelectorAll(".skill-panel");
+    const pillsWrap = document.getElementById("skillPills");
+
+    function renderPills(key) {
+      pillsWrap.innerHTML = pillsByTab[key].map(x => `<span class="pill">${x}</span>`).join("");
+    }
+
+    function setActive(key) {
+      tabs.forEach(t => {
+        const on = t.dataset.skill === key;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+
+      panels.forEach(p => {
+        p.classList.toggle("active", p.dataset.skillPanel === key);
+      });
+
+      renderPills(key);
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => setActive(btn.dataset.skill));
+    });
+
+    // init
+    setActive("analytics");
+  })();
+</script>
