@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!-- Projects Section -->
 <style>
   .projects-wrap {
@@ -518,4 +519,190 @@
       });
     });
   })();
+=======
+<h2>Projects</h2>
+<p class="section-sub">Academic research, data engineering builds, and AI/ML explorations</p>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="academic">Academic</button>
+  <button class="filter-btn" data-filter="ai">AI / ML</button>
+  <button class="filter-btn" data-filter="data">Data Engineering</button>
+  <button class="filter-btn" data-filter="professional">Professional</button>
+</div>
+
+<div class="cards" id="projectsGrid">
+
+  <!-- Project 1 -->
+  <div class="card" data-categories="academic data">
+    <div class="card-bar" style="background:linear-gradient(90deg,#2563eb,#0891b2);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🏥</div>
+        <div class="card-badges">
+          <span class="badge badge-academic">Academic</span>
+          <span class="badge badge-data">Data Engineering</span>
+        </div>
+      </div>
+      <h3>Hospital Cost Analysis & Predictive Decision System</h3>
+      <p class="card-desc">Django full-stack web app analyzing 10K+ patient records to identify cost-effective hospitals and support data-driven healthcare decisions.</p>
+      <ul>
+        <li>Integrated <b>10 Synthea datasets</b> into structured master tables for improved query performance</li>
+        <li>Predictive models achieving <b>R² of ~0.60</b> for patient visits & cost estimation</li>
+        <li>Implemented <b>24-month time-series forecasting</b></li>
+        <li>Interactive dashboards via <b>Power BI, Plotly, and Chart.js</b></li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Django</span><span class="pill">SQL</span>
+        <span class="pill">Plotly</span><span class="pill">Chart.js</span><span class="pill">Power BI</span>
+        <span class="pill">Scikit-learn</span><span class="pill">Time Series</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+      <a href="#" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="card" data-categories="academic ai">
+    <div class="card-bar" style="background:linear-gradient(90deg,#7c3aed,#0891b2);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🤖</div>
+        <div class="card-badges">
+          <span class="badge badge-academic">Academic</span>
+          <span class="badge badge-ai">AI / ML</span>
+        </div>
+      </div>
+      <h3>Secure Business KPI Retrieval Assistant using RAG</h3>
+      <p class="card-desc">RAG-based assistant over enterprise documents that retrieves precise KPI data and eliminates hallucinated responses.</p>
+      <ul>
+        <li>Built over <b>6 enterprise documents</b> using 24 heading-based chunks for retrieval precision</li>
+        <li>Benchmarked <b>OpenAI vs MiniLM</b> — Top similarity 0.65 vs 0.52</li>
+        <li>Cost-efficient open-source deployment with <b>zero hallucination</b> architecture</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">RAG</span><span class="pill">OpenAI API</span>
+        <span class="pill">MiniLM</span><span class="pill">Vector Embeddings</span><span class="pill">FAISS</span><span class="pill">LLM</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+      <a href="#" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="card" data-categories="professional data">
+    <div class="card-bar" style="background:linear-gradient(90deg,#0891b2,#2563eb);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">⚙️</div>
+        <div class="card-badges">
+          <span class="badge badge-professional">Professional</span>
+          <span class="badge badge-data">Data Engineering</span>
+        </div>
+      </div>
+      <h3>Django Workflow Automation Platform</h3>
+      <p class="card-desc">Replaced manual Excel-based banking operations with a full-stack Django web app, saving 100+ operational hours per month.</p>
+      <ul>
+        <li>Transformed Excel-heavy workflows into <b>automated web applications</b></li>
+        <li>Saved <b>100+ operational hours</b> per month across teams</li>
+        <li>Reduced reporting turnaround time by <b>35%</b> via Python & SQL automation</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Django</span><span class="pill">Python</span><span class="pill">SQL</span>
+        <span class="pill">REST APIs</span><span class="pill">MySQL</span><span class="pill">JavaScript</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+      <a href="#" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="card" data-categories="professional data">
+    <div class="card-bar" style="background:linear-gradient(90deg,#f59e0b,#2563eb);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">📊</div>
+        <div class="card-badges">
+          <span class="badge badge-professional">Professional</span>
+          <span class="badge badge-data">Data Engineering</span>
+        </div>
+      </div>
+      <h3>Real-Time System Monitoring & KPI Dashboards</h3>
+      <p class="card-desc">Real-time monitoring dashboards from log data and Power BI KPI reports for high-availability banking systems.</p>
+      <ul>
+        <li>Improved incident detection and response efficiency by <b>~30%</b></li>
+        <li>Reduced manual monitoring effort by <b>30%</b> via Power BI KPI reports</li>
+        <li>Integrated <b>Splunk and Dynatrace</b> alerts for proactive incident management</li>
+        <li>Maintained <b>100% uptime</b> for HP NonStop environments</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Power BI</span><span class="pill">Splunk</span><span class="pill">Dynatrace</span>
+        <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">HP NonStop</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+      <a href="#" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- Hugging Face -->
+  <div class="card" data-categories="ai">
+    <div class="card-bar" style="background:linear-gradient(90deg,#7c3aed,#0891b2);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🤗</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">AI / ML</span>
+        </div>
+      </div>
+      <h3>Hugging Face Portfolio</h3>
+      <p class="card-desc">Deployed models, demos, and AI experiments. Explore live:
+        <a href="https://huggingface.co/ashokmedasani" target="_blank" rel="noopener noreferrer"><b>huggingface.co/ashokmedasani</b></a>
+      </p>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Hugging Face</span><span class="pill">Gradio</span>
+        <span class="pill">LLM</span><span class="pill">Deployment</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://huggingface.co/ashokmedasani" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 View Profile</a>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:16px; font-size:.8rem; color:var(--muted);">
+  💡 More projects coming — replace <code style="background:var(--surface2);padding:1px 5px;border-radius:4px;">href="#"</code> with your actual live demo and GitHub links.
+</p>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#projectsGrid .card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', function(){
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const f = this.getAttribute('data-filter');
+      cards.forEach(card => {
+        const cats = card.getAttribute('data-categories') || '';
+        card.classList.toggle('hidden', f !== 'all' && !cats.includes(f));
+      });
+    });
+  });
+})();
+>>>>>>> Stashed changes
 </script>
