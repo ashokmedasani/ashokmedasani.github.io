@@ -714,11 +714,14 @@ a { text-decoration: none; color: inherit; }
 }
 
 .link-btn-primary {
-  background: var(--accent);
-  color: #fff;
+  background: #fff;
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
-.link-btn-primary:hover { background: #1d4ed8; }
+.link-btn-primary:hover {
+  background: var(--accent-light);
+}
 
 .link-btn-secondary {
   background: var(--surface);

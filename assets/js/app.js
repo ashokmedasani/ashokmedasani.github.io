@@ -14,30 +14,25 @@ function startIconRain() {
 
   // Soft muted colors that work on white — blue, teal, purple, slate
   const colors = [
-    'rgba(37,99,235,0.12)',   // blue
-    'rgba(8,145,178,0.12)',   // teal
-    'rgba(124,58,237,0.10)',  // purple
-    'rgba(100,116,139,0.10)', // slate
-    'rgba(16,185,129,0.10)',  // emerald
-    'rgba(245,158,11,0.10)',  // amber
+    'rgba(37,99,235,0.28)',   // blue
+    'rgba(8,145,178,0.28)',   // teal
+    'rgba(124,58,237,0.24)',  // purple
+    'rgba(100,116,139,0.22)', // slate
+    'rgba(16,185,129,0.24)',  // emerald
+    'rgba(245,158,11,0.24)',  // amber
   ];
 
-  const COUNT = 30;
+  const COUNT = 70;
 
-  function randX(side) {
-    if (side === 'left')  return 2 + Math.random() * 14;   // 2–16vw
-    return 84 + Math.random() * 14;                          // 84–98vw
-  }
-
-  function createOne(i) {
+  function createOne() {
     const el = document.createElement('div');
     el.className = 'rain-icon';
     el.textContent = icons[Math.floor(Math.random() * icons.length)];
 
-    const side = (i % 2 === 0) ? 'left' : 'right';
-    el.style.left = randX(side) + 'vw';
+    // Spread across the FULL screen width
+    el.style.left = (Math.random() * 100) + 'vw';
 
-    const size = 11 + Math.random() * 14;
+    const size = 13 + Math.random() * 16;
     el.style.fontSize = size + 'px';
 
     const color = colors[Math.floor(Math.random() * colors.length)];
@@ -51,7 +46,7 @@ function startIconRain() {
   }
 
   layer.innerHTML = '';
-  for (let i = 0; i < COUNT; i++) createOne(i);
+  for (let i = 0; i < COUNT; i++) createOne();
 }
 
 /* =============================================
