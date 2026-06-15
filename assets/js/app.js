@@ -1,137 +1,50 @@
-async function loadSection(file) {
-  const content = document.getElementById("content");
-  content.innerHTML = `<p class="muted">Loading...</p>`;
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const content = document.getElementById('content');
+  const avatarImg = document.querySelector('.avatar-img');
+  const avatarFallback = document.getElementById('avatarFallback');
 
-  try {
-    const res = await fetch(file, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Missing file: ${file}`);
-    const html = await res.text();
-    content.innerHTML = html;
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } catch (e) {
-    content.innerHTML = `
-      <h2>Section not found</h2>
-      <p class="muted">${e.message}</p>
-      <p class="muted">Create <b>${file}</b> inside <b>/sections</b> folder.</p>
-    `;
-  }
-}
-
-function setActive(btn) {
-  document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-}
-
-/* -------- Icon Rain (left & right slow) -------- */
-function startIconRain() {
-  const layer = document.getElementById("iconRain");
-  if (!layer) return;
-
-  // Simple, clean symbols (no big emojis)
-  const icons = [
-    "Σ", "λ", "π", "∑", "ƒ", "∆", "≡", "≋",
-    "</>", "{ }", "SQL", "PY", "ETL", "BI", "API",
-    "☁", "⋯", "→", "↗", "▦", "▥"
-  ];
-
-  // How many falling items (keep subtle)
-  const COUNT = 26;
-
-  // left band = 6% to 18%, right band = 82% to 94%
-  function randX(side) {
-    if (side === "left") return (6 + Math.random() * 12);     // %
-    return (82 + Math.random() * 12);                          // %
+  // Show fallback if image fails
+  if (avatarImg) {
+    avatarImg.addEventListener('error', function () {
+      this.style.display = 'none';
+      if (avatarFallback) avatarFallback.style.display = 'flex';
+    });
+    avatarImg.addEventListener('load', function () {
+      if (avatarFallback) avatarFallback.style.display = 'none';
+    });
   }
 
-  function createOne(i) {
-    const el = document.createElement("div");
-    el.className = "rain-icon";
-    el.textContent = icons[Math.floor(Math.random() * icons.length)];
-
-    const side = (i % 2 === 0) ? "left" : "right";
-    el.style.left = randX(side) + "vw";
-
-    // sizes
-    const size = 12 + Math.random() * 16; // px
-    el.style.fontSize = size + "px";
-
-    // slow speed (less speed like you asked)
-    const duration = 14 + Math.random() * 20; // seconds (slow)
-    el.style.animationDuration = duration + "s";
-
-    // start at random point in the animation
-    const delay = -(Math.random() * duration);
-    el.style.animationDelay = delay + "s";
-
-    // slightly different opacity (still subtle)
-    el.style.opacity = (0.10 + Math.random() * 0.10).toFixed(2);
-
-    layer.appendChild(el);
+  function loadContent(filePath) {
+    content.innerHTML = '<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>';
+    fetch(filePath)
+      .then(function (res) {
+        if (!res.ok) throw new Error('Not found: ' + filePath);
+        return res.text();
+      })
+      .then(function (html) {
+        content.innerHTML = html;
+        // Re-run any inline scripts in loaded content
+        content.querySelectorAll('script').forEach(function (oldScript) {
+          const newScript = document.createElement('script');
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      })
+      .catch(function () {
+        content.innerHTML = '<div style="padding:2rem;text-align:center;color:#94a3b8;"><p>Section coming soon.</p></div>';
+      });
   }
 
-  // clear old if reloaded
-  layer.innerHTML = "";
-  for (let i = 0; i < COUNT; i++) createOne(i);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  // First, create the icon rain
-  startIconRain();
-
-  // Then, handle tabs
-  const tabs = document.querySelectorAll(".tab");
-  
-  // Check if we should load default content (only if content div is empty)
-  const contentDiv = document.getElementById("content");
-  if (!contentDiv.innerHTML.trim()) {
-    const activeTab = document.querySelector(".tab.active");
-    if (activeTab) {
-      loadSection(activeTab.dataset.file);
-    }
-  }
-
-  // Add click handlers to tabs
-  tabs.forEach(btn => {
-    btn.addEventListener("click", () => {
-      setActive(btn);
-      loadSection(btn.dataset.file);
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      loadContent(this.getAttribute('data-file'));
     });
   });
 
-  // Rebuild on resize (keeps left/right bands consistent)
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(startIconRain, 250);
-  });
+  // Load About by default
+  const defaultTab = document.querySelector('.tab-btn.active');
+  if (defaultTab) loadContent(defaultTab.getAttribute('data-file'));
 });
-
-
-const tabs = document.querySelectorAll(".tab");
-const content = document.getElementById("content");
-
-async function loadSection(file) {
-  const currentScrollY = window.scrollY; // ✅ remember scroll position
-
-  const res = await fetch(file);
-  const html = await res.text();
-
-  content.innerHTML = html;
-
-  // ✅ restore scroll position (prevents jump)
-  requestAnimationFrame(() => window.scrollTo(0, currentScrollY));
-}
-
-tabs.forEach(tab => {
-  tab.addEventListener("click", (e) => {
-    e.preventDefault(); // ✅ prevents default button/anchor behavior
-
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    loadSection(tab.dataset.file);
-  });
-});
-
-// initial load
-loadSection(document.querySelector(".tab.active")?.dataset.file || "sections/summary.html");
