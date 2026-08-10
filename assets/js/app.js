@@ -52,7 +52,7 @@ function startIconRain() {
 /* =============================================
    TAB / SECTION LOADER
 ============================================= */
-async function loadSection(file) {
+async function loadSection(file, userInitiated = false) {
   const content = document.getElementById('content');
   const scrollY = window.scrollY;
   content.innerHTML = '<p class="muted" style="padding:1rem 0;">Loading...</p>';
@@ -70,7 +70,18 @@ async function loadSection(file) {
       old.parentNode.replaceChild(s, old);
     });
 
-    requestAnimationFrame(() => window.scrollTo(0, scrollY));
+    // When the user clicks a tab, bring the new section into view.
+    // (Restoring the old scroll position can land past shorter sections,
+    //  which makes the page look blank.)
+    requestAnimationFrame(() => {
+      if (userInitiated) {
+        const card = content.closest('.section-card') || content;
+        const top = card.getBoundingClientRect().top + window.scrollY - 24;
+        window.scrollTo({ top, behavior: 'smooth' });
+      } else {
+        window.scrollTo(0, scrollY);
+      }
+    });
   } catch (e) {
     content.innerHTML = `
       <h2>Section coming soon</h2>
@@ -102,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', e => {
       e.preventDefault();
       setActive(btn);
-      loadSection(btn.dataset.file);
+      loadSection(btn.dataset.file, true);
     });
   });
 
