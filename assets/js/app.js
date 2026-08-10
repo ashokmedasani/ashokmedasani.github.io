@@ -12,8 +12,17 @@ function startIconRain() {
     '→', '↗', '⋯', '▦', '#', '@', '∞', '≋'
   ];
 
-  // Soft muted colors that work on white — blue, teal, purple, slate
-  const colors = [
+  // Colors tuned per theme — brighter and more transparent on dark
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+  const colors = isDark ? [
+    'rgba(96,165,250,0.22)',  // blue
+    'rgba(56,189,248,0.20)',  // sky
+    'rgba(167,139,250,0.20)', // purple
+    'rgba(148,163,184,0.16)', // slate
+    'rgba(52,211,153,0.18)',  // emerald
+    'rgba(251,191,36,0.18)',  // amber
+  ] : [
     'rgba(37,99,235,0.28)',   // blue
     'rgba(8,145,178,0.28)',   // teal
     'rgba(124,58,237,0.24)',  // purple
@@ -98,7 +107,35 @@ function setActive(btn) {
 /* =============================================
    INIT
 ============================================= */
+/* =============================================
+   THEME TOGGLE — dark by default, choice remembered
+============================================= */
+function initTheme() {
+  const btn = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  const paint = () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    if (btn) {
+      btn.textContent = dark ? '🌙' : '☀️';
+      btn.setAttribute('aria-pressed', String(dark));
+    }
+  };
+
+  paint();
+
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    paint();
+    startIconRain(); // regenerate rain so colors suit the new theme
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   startIconRain();
 
   // Rebuild rain on resize (keeps bands consistent)

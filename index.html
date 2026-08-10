@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css"/>
+  <script>
+    // Apply saved theme before first paint to avoid a flash of the wrong theme
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', saved || 'dark');
+      } catch (e) { /* storage blocked — default stays dark */ }
+    })();
+  </script>
 </head>
 <body>
 
@@ -37,6 +46,8 @@
             </div>
 
             <div class="top-actions">
+              <button class="theme-toggle" id="themeToggle" type="button"
+                      aria-label="Toggle light and dark mode" title="Toggle light / dark mode">🌙</button>
               <a class="btn" target="_blank" rel="noopener noreferrer" href="https://github.com/ashokmedasani">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path fill="currentColor" d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.44 7.86 10.97.57.1.78-.25.78-.55v-1.95c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.78 2.7 1.26 3.36.96.1-.76.4-1.26.72-1.55-2.55-.3-5.23-1.28-5.23-5.68 0-1.25.44-2.27 1.17-3.07-.12-.3-.5-1.52.11-3.16 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.61 1.64.23 2.86.11 3.16.73.8 1.17 1.82 1.17 3.07 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A11.52 11.52 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
@@ -75,16 +86,6 @@
             <p>The second was more interesting. Our system alerts looked random, but they weren't — after a change went in, the alerts it caused often surfaced <i>later</i> rather than immediately. I kept thinking: this is a pattern, so why are we reacting to it instead of predicting it? I didn't have the tools then. That question is what brought me here.</p>
             <p>Since then I've built <b>CareFinder</b>, a Django healthcare application forecasting hospital cost and patient visits with Random Forest and XGBoost across ten integrated datasets; trained and deployed CNNs; shipped a RAG assistant; and designed and deployed a full multi-surface platform on AWS. I'm now focused on data analytics, data science, and analytics engineering roles with a strong predictive component.</p>
             <p>Outside of work, I enjoy playing chess, exploring new places, and spending time with friends — it keeps me grounded and thinking clearly.</p>
-            <div class="resume-callout">
-              <div class="resume-left">
-                <div class="resume-title">📄 Resume</div>
-                <div class="resume-sub">Download or view my latest resume</div>
-              </div>
-              <a class="resume-btn" target="_blank" rel="noopener noreferrer"
-                 href="assets/docs/Ashok_Medasani_Resume.pdf">
-                View Resume
-              </a>
-            </div>
           </div>
 
           <!-- Tabs -->

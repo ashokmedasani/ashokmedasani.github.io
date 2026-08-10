@@ -861,3 +861,57 @@ a { text-decoration: none; color: inherit; }
   .resume-callout { flex-direction: column; align-items: stretch; }
   .resume-btn { text-align: center; }
 }
+
+/* =============================================
+   DARK MODE
+   Applied via <html data-theme="dark">.
+   Overrides tokens only — every component that uses
+   var(--…) adapts automatically.
+============================================= */
+html[data-theme="dark"] {
+  --bg: #0b1120;
+  --surface: #111827;
+  --surface2: #1a2332;
+  --border: #263244;
+  --border-hover: #3a4a63;
+  --text: #e8edf5;
+  --text-secondary: #a9b6c9;
+  --muted: #7d8ba1;
+  --accent: #60a5fa;
+  --accent-light: #16233b;
+  --accent-border: #2f4d7a;
+  --accent2: #38bdf8;
+  --shadow: 0 1px 3px rgba(0,0,0,.5), 0 4px 16px rgba(0,0,0,.35);
+  --shadow-lg: 0 4px 28px rgba(0,0,0,.55);
+}
+
+/* Components with hardcoded light colors */
+html[data-theme="dark"] .link-btn-primary { background: transparent; }
+html[data-theme="dark"] .badge-academic     { background: #16233b; color: #93c5fd; border-color: #2f4d7a; }
+html[data-theme="dark"] .badge-professional { background: #12281c; color: #86efac; border-color: #256b3f; }
+html[data-theme="dark"] .badge-ai           { background: #21173a; color: #c4b5fd; border-color: #4c3a7a; }
+html[data-theme="dark"] .badge-data         { background: #2b1a0f; color: #fdba74; border-color: #7c4a21; }
+
+/* Photos/screenshots sit a little softer against dark */
+html[data-theme="dark"] img { filter: brightness(.94); }
+
+/* Theme toggle button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: border-color .15s, transform .15s, background .15s;
+}
+.theme-toggle:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
