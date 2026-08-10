@@ -1,18 +1,51 @@
-<h2>Certifications & Recognition</h2>
-<p class="section-sub">Professional credentials and awards</p>
+<h2>Certifications &amp; Recognition</h2>
+<p class="section-sub">Professional credentials and awards — click a card to view the certificate</p>
+
+<style>
+  /* Clickable certificate cards */
+  a.cert-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+    position: relative;
+  }
+  a.cert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, .12);
+  }
+  a.cert-card::after {
+    content: "↗";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: .8rem;
+    opacity: .35;
+  }
+  .cert-card.cert-pending { opacity: .92; }
+  .cert-note {
+    font-size: .78rem;
+    opacity: .55;
+    margin-top: .2rem;
+  }
+</style>
 
 <div class="cert-grid">
 
-  <div class="cert-card">
+  <!-- ✅ LINKED: verifiable credential -->
+  <a class="cert-card" href="https://www.credential.net/bbd36c18-f0ed-44da-bdd6-dc31439e52ff"
+     target="_blank" rel="noopener noreferrer" title="Verify this credential">
     <div class="cert-icon">🤖</div>
     <div>
       <div class="cert-name">Academy Accreditation — Generative AI Fundamentals</div>
       <div class="cert-issuer">Databricks Academy</div>
       <div class="cert-date">2026</div>
+      <div class="cert-note">Verify credential →</div>
     </div>
-  </div>
+  </a>
 
-  <div class="cert-card">
+  <!-- ⬜ Add image: assets/certs/redhat-sysadmin.jpg  → then wrap in <a href="..."> (see guide at bottom) -->
+  <div class="cert-card cert-pending">
     <div class="cert-icon">🐧</div>
     <div>
       <div class="cert-name">Red Hat System Administration</div>
@@ -21,7 +54,8 @@
     </div>
   </div>
 
-  <div class="cert-card">
+  <!-- ⬜ Add image: assets/certs/excelerate-star-data-visualization.jpg -->
+  <div class="cert-card cert-pending">
     <div class="cert-icon">⭐</div>
     <div>
       <div class="cert-name">Star Performer — Data Visualization Associate</div>
@@ -30,7 +64,8 @@
     </div>
   </div>
 
-  <div class="cert-card">
+  <!-- ⬜ Add image: assets/certs/excelerate-star-project-management.jpg -->
+  <div class="cert-card cert-pending">
     <div class="cert-icon">⭐</div>
     <div>
       <div class="cert-name">Star Performer — Project Management Trainee</div>
@@ -39,7 +74,8 @@
     </div>
   </div>
 
-  <div class="cert-card">
+  <!-- ⬜ Add image: assets/certs/excelerate-star-innovation.jpg -->
+  <div class="cert-card cert-pending">
     <div class="cert-icon">⭐</div>
     <div>
       <div class="cert-name">Star Performer — Innovation &amp; Entrepreneurship Trainee</div>
@@ -48,7 +84,8 @@
     </div>
   </div>
 
-  <div class="cert-card">
+  <!-- ⬜ Add image: assets/certs/thinkcloudly-ai-datascience.jpg -->
+  <div class="cert-card cert-pending">
     <div class="cert-icon">🎓</div>
     <div>
       <div class="cert-name">AI &amp; Data Science Bootcamp</div>
@@ -57,7 +94,8 @@
     </div>
   </div>
 
-  <div class="cert-card">
+  <!-- ⬜ Add image: assets/certs/cpr-aed.jpg -->
+  <div class="cert-card cert-pending">
     <div class="cert-icon">🚑</div>
     <div>
       <div class="cert-name">CPR / AED Certification</div>
@@ -67,3 +105,36 @@
   </div>
 
 </div>
+
+<!--
+  ================================================================
+  HOW TO MAKE A CERTIFICATE CARD CLICKABLE
+  ================================================================
+
+  1. Drop the certificate image or PDF into:  assets/certs/
+     Suggested filenames are in the comment above each card.
+
+  2. Change that card from a <div> to an <a>, like this:
+
+     BEFORE:
+       <div class="cert-card cert-pending">
+         ...
+       </div>
+
+     AFTER:
+       <a class="cert-card" href="../assets/certs/redhat-sysadmin.jpg"
+          target="_blank" rel="noopener noreferrer">
+         ...
+       </a>
+
+  3. Remove the "cert-pending" class — the ↗ arrow and hover effect
+     appear automatically on any <a class="cert-card">.
+
+  NOTE ON PATHS: these section files are loaded by index.html via fetch,
+  so links resolve relative to the SITE ROOT, not this file.
+  Use  assets/certs/filename.jpg  (no ../ prefix).
+
+  If you have a verifiable online credential (like the Databricks one),
+  link to that URL instead of a local image — it's stronger evidence.
+  ================================================================
+-->
