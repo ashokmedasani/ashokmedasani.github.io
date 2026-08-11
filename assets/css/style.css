@@ -566,8 +566,8 @@ a { text-decoration: none; color: inherit; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;   /* single column — one project per row, newest first */
+  gap: 18px;
 }
 
 .card {
