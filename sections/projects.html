@@ -1,5 +1,5 @@
 <h2>Projects</h2>
-<p class="section-sub">Predictive modeling, deployed applications, and AI/ML builds — most recent first</p>
+<p class="section-sub">AI/ML research and builds, predictive modeling, and deployed applications — most recent first</p>
 
 <div class="filter-bar">
   <span class="filter-label">Filter:</span>
@@ -12,6 +12,50 @@
 </div>
 
 <div class="cards" id="projectsGrid">
+
+  <!-- 0 · Fall 2026 — Symbolic Regression Research (in progress) -->
+  <div class="card" data-categories="ml ai">
+    <div class="card-bar" style="background:linear-gradient(90deg,#6d28d9,#a855f7);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🧬</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Research · In Progress</span>
+        </div>
+      </div>
+      <h3>Symbolic Regression Research <span class="muted" style="font-weight:400;">· Fall 2026</span></h3>
+      <p class="card-desc">Currently researching symbolic regression under a professor at Saint Louis University. Just getting started — details to follow as the work progresses.</p>
+    </div>
+  </div>
+
+  <!-- 0.5 · 2026 — TitanForge -->
+  <div class="card" data-categories="ml">
+    <div class="card-bar" style="background:linear-gradient(90deg,#dc2626,#f97316);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">✈️</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Predictive / ML</span>
+        </div>
+      </div>
+      <h3>TitanForge — Aerospace Predictive Maintenance <span class="muted" style="font-weight:400;">· 2026</span></h3>
+      <p class="card-desc">A 97%-accuracy failure-detection model was quietly missing ~80% of real failures. The fix, and the lesson, are documented in an interactive walkthrough.</p>
+      <ul>
+        <li>Found that <b>severe class imbalance</b> (3.48% failure rate) masked a real recall problem behind a misleadingly high weighted-accuracy score</li>
+        <li>Corrected with <b>class weighting and SMOTE</b>, raising failure recall from ~20% to 80%+</li>
+        <li>A tuned <b>Gradient Boosting</b> model remained the strongest performer on F1 after rebalancing — a better metric mattered more than a fancier algorithm</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Scikit-learn</span><span class="pill">SMOTE</span>
+        <span class="pill">Gradient Boosting</span><span class="pill">Streamlit</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://titan-forge.streamlit.app/" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Walkthrough</a>
+      <a href="https://github.com/ashokmedasani/Titan-Forge" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
 
   <!-- 1 · 2026 — Independent full-stack platform (unnamed by choice) -->
   <div class="card" data-categories="product data">
