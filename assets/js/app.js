@@ -1,137 +1,160 @@
-async function loadSection(file) {
-  const content = document.getElementById("content");
-  content.innerHTML = `<p class="muted">Loading...</p>`;
+/* =============================================
+   ICON RAIN — light theme, colored symbols
+============================================= */
+function startIconRain() {
+  const layer = document.getElementById('iconRain');
+  if (!layer) return;
+
+  // Symbols relevant to data/analytics/tech
+  const icons = [
+    'Σ', 'λ', 'π', '∑', 'ƒ', '∆', '≡', '∫',
+    '{ }', '</>', 'SQL', 'ETL', 'PY', 'BI', 'ML',
+    '→', '↗', '⋯', '▦', '#', '@', '∞', '≋'
+  ];
+
+  // Colors tuned per theme — brighter and more transparent on dark
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+  const colors = isDark ? [
+    'rgba(96,165,250,0.22)',  // blue
+    'rgba(56,189,248,0.20)',  // sky
+    'rgba(167,139,250,0.20)', // purple
+    'rgba(148,163,184,0.16)', // slate
+    'rgba(52,211,153,0.18)',  // emerald
+    'rgba(251,191,36,0.18)',  // amber
+  ] : [
+    'rgba(37,99,235,0.28)',   // blue
+    'rgba(8,145,178,0.28)',   // teal
+    'rgba(124,58,237,0.24)',  // purple
+    'rgba(100,116,139,0.22)', // slate
+    'rgba(16,185,129,0.24)',  // emerald
+    'rgba(245,158,11,0.24)',  // amber
+  ];
+
+  const COUNT = 70;
+
+  function createOne() {
+    const el = document.createElement('div');
+    el.className = 'rain-icon';
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+
+    // Spread across the FULL screen width
+    el.style.left = (Math.random() * 100) + 'vw';
+
+    const size = 13 + Math.random() * 16;
+    el.style.fontSize = size + 'px';
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    el.style.color = color;
+
+    const duration = 16 + Math.random() * 22;
+    el.style.animationDuration = duration + 's';
+    el.style.animationDelay = -(Math.random() * duration) + 's';
+
+    layer.appendChild(el);
+  }
+
+  layer.innerHTML = '';
+  for (let i = 0; i < COUNT; i++) createOne();
+}
+
+/* =============================================
+   TAB / SECTION LOADER
+============================================= */
+async function loadSection(file, userInitiated = false) {
+  const content = document.getElementById('content');
+  const scrollY = window.scrollY;
+  content.innerHTML = '<p class="muted" style="padding:1rem 0;">Loading...</p>';
 
   try {
-    const res = await fetch(file, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Missing file: ${file}`);
+    const res = await fetch(file, { cache: 'no-store' });
+    if (!res.ok) throw new Error('File not found: ' + file);
     const html = await res.text();
     content.innerHTML = html;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Re-execute any inline scripts in loaded content
+    content.querySelectorAll('script').forEach(old => {
+      const s = document.createElement('script');
+      s.textContent = old.textContent;
+      old.parentNode.replaceChild(s, old);
+    });
+
+    // When the user clicks a tab, bring the new section into view.
+    // (Restoring the old scroll position can land past shorter sections,
+    //  which makes the page look blank.)
+    requestAnimationFrame(() => {
+      if (userInitiated) {
+        const card = content.closest('.section-card') || content;
+        const top = card.getBoundingClientRect().top + window.scrollY - 24;
+        window.scrollTo({ top, behavior: 'smooth' });
+      } else {
+        window.scrollTo(0, scrollY);
+      }
+    });
   } catch (e) {
     content.innerHTML = `
-      <h2>Section not found</h2>
+      <h2>Section coming soon</h2>
       <p class="muted">${e.message}</p>
-      <p class="muted">Create <b>${file}</b> inside <b>/sections</b> folder.</p>
     `;
   }
 }
 
 function setActive(btn) {
-  document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
 
-/* -------- Icon Rain (left & right slow) -------- */
-function startIconRain() {
-  const layer = document.getElementById("iconRain");
-  if (!layer) return;
+/* =============================================
+   INIT
+============================================= */
+/* =============================================
+   THEME TOGGLE — dark by default, choice remembered
+============================================= */
+function initTheme() {
+  const btn = document.getElementById('themeToggle');
+  const root = document.documentElement;
 
-  // Simple, clean symbols (no big emojis)
-  const icons = [
-    "Σ", "λ", "π", "∑", "ƒ", "∆", "≡", "≋",
-    "</>", "{ }", "SQL", "PY", "ETL", "BI", "API",
-    "☁", "⋯", "→", "↗", "▦", "▥"
-  ];
+  const paint = () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    if (btn) {
+      btn.textContent = dark ? '🌙' : '☀️';
+      btn.setAttribute('aria-pressed', String(dark));
+    }
+  };
 
-  // How many falling items (keep subtle)
-  const COUNT = 26;
+  paint();
 
-  // left band = 6% to 18%, right band = 82% to 94%
-  function randX(side) {
-    if (side === "left") return (6 + Math.random() * 12);     // %
-    return (82 + Math.random() * 12);                          // %
-  }
-
-  function createOne(i) {
-    const el = document.createElement("div");
-    el.className = "rain-icon";
-    el.textContent = icons[Math.floor(Math.random() * icons.length)];
-
-    const side = (i % 2 === 0) ? "left" : "right";
-    el.style.left = randX(side) + "vw";
-
-    // sizes
-    const size = 12 + Math.random() * 16; // px
-    el.style.fontSize = size + "px";
-
-    // slow speed (less speed like you asked)
-    const duration = 14 + Math.random() * 20; // seconds (slow)
-    el.style.animationDuration = duration + "s";
-
-    // start at random point in the animation
-    const delay = -(Math.random() * duration);
-    el.style.animationDelay = delay + "s";
-
-    // slightly different opacity (still subtle)
-    el.style.opacity = (0.10 + Math.random() * 0.10).toFixed(2);
-
-    layer.appendChild(el);
-  }
-
-  // clear old if reloaded
-  layer.innerHTML = "";
-  for (let i = 0; i < COUNT; i++) createOne(i);
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    paint();
+    startIconRain(); // regenerate rain so colors suit the new theme
+  });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // First, create the icon rain
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   startIconRain();
 
-  // Then, handle tabs
-  const tabs = document.querySelectorAll(".tab");
-  
-  // Check if we should load default content (only if content div is empty)
-  const contentDiv = document.getElementById("content");
-  if (!contentDiv.innerHTML.trim()) {
-    const activeTab = document.querySelector(".tab.active");
-    if (activeTab) {
-      loadSection(activeTab.dataset.file);
-    }
-  }
+  // Rebuild rain on resize (keeps bands consistent)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(startIconRain, 300);
+  });
 
-  // Add click handlers to tabs
-  tabs.forEach(btn => {
-    btn.addEventListener("click", () => {
+  // Tab clicks
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
       setActive(btn);
-      loadSection(btn.dataset.file);
+      loadSection(btn.dataset.file, true);
     });
   });
 
-  // Rebuild on resize (keeps left/right bands consistent)
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(startIconRain, 250);
-  });
+  // Load default active tab
+  const active = document.querySelector('.tab.active');
+  if (active) loadSection(active.dataset.file);
 });
-
-
-const tabs = document.querySelectorAll(".tab");
-const content = document.getElementById("content");
-
-async function loadSection(file) {
-  const currentScrollY = window.scrollY; // ✅ remember scroll position
-
-  const res = await fetch(file);
-  const html = await res.text();
-
-  content.innerHTML = html;
-
-  // ✅ restore scroll position (prevents jump)
-  requestAnimationFrame(() => window.scrollTo(0, currentScrollY));
-}
-
-tabs.forEach(tab => {
-  tab.addEventListener("click", (e) => {
-    e.preventDefault(); // ✅ prevents default button/anchor behavior
-
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    loadSection(tab.dataset.file);
-  });
-});
-
-// initial load
-loadSection(document.querySelector(".tab.active")?.dataset.file || "sections/summary.html");

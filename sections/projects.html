@@ -1,54 +1,321 @@
 <h2>Projects</h2>
+<p class="section-sub">AI/ML research and builds, predictive modeling, and deployed applications — most recent first</p>
 
-<div class="cards">
-  <div class="card">
-    <h3>Predicting Purchase Behavior (Random Forest)</h3>
-    <p class="small">Python • Pandas • Scikit-learn • SQL • Power BI</p>
-    <ul>
-      <li>Pipeline on 100,000 sessions; dwell time strongest predictor.</li>
-      <li>18% higher conversion segments discovered via clustering + A/B testing.</li>
-      <li>Power BI dashboards exposed 22% churn-prone cohorts.</li>
-    </ul>
-    <div class="pills">
-      <span class="pill">Random Forest</span><span class="pill">Segmentation</span><span class="pill">Dashboards</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>TitanForge — Predictive Maintenance</h3>
-    <p class="small">Python • Gradient Boosting • SQL • Plotly</p>
-    <ul>
-      <li>98.1% accuracy; vibration variance earliest failure indicator.</li>
-      <li>15-minute temperature spikes preceded degradation patterns.</li>
-      <li>Simulated downtime reduced by 27% annually.</li>
-    </ul>
-    <div class="pills">
-      <span class="pill">Time Series</span><span class="pill">Anomaly Detection</span><span class="pill">Plotly</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Enterprise Excel Automation Platform</h3>
-    <p class="small">Django • Pandas • REST APIs • RBAC • Git</p>
-    <ul>
-      <li>Saved 300+ hours quarterly replacing manual consolidation.</li>
-      <li>Validation rules uncovered 12% KPI inconsistencies.</li>
-      <li>Improved audit traceability with RBAC + Git versioning.</li>
-    </ul>
-    <div class="pills">
-      <span class="pill">Automation</span><span class="pill">RBAC</span><span class="pill">ETL</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Hugging Face Portfolio</h3>
-    <p class="small">Deployed apps • Demos • Models</p>
-    <p>
-      Explore my Hugging Face work:
-      <a href="https://huggingface.co/ashokmedasani" target="_blank" rel="noreferrer"><b>huggingface.co/ashokmedasani</b></a>
-    </p>
-    <div class="pills">
-      <span class="pill">Deployment</span><span class="pill">Demos</span><span class="pill">Gradio</span>
-    </div>
-  </div>
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="ml">Predictive / ML</button>
+  <button class="filter-btn" data-filter="ai">AI / GenAI</button>
+  <button class="filter-btn" data-filter="data">Data Engineering</button>
+  <button class="filter-btn" data-filter="bi">BI / Dashboards</button>
+  <button class="filter-btn" data-filter="product">Product</button>
 </div>
+
+<div class="cards" id="projectsGrid">
+
+  <!-- 0 · Fall 2026 — Symbolic Regression Research (in progress) -->
+  <div class="card" data-categories="ml ai">
+    <div class="card-bar" style="background:linear-gradient(90deg,#6d28d9,#a855f7);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🧬</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Research · In Progress</span>
+        </div>
+      </div>
+      <h3>Symbolic Regression Research <span class="muted" style="font-weight:400;">· Fall 2026</span></h3>
+      <p class="card-desc">Currently researching symbolic regression under a professor at Saint Louis University. Just getting started — details to follow as the work progresses.</p>
+    </div>
+  </div>
+
+  <!-- 0.5 · 2026 — TitanForge -->
+  <div class="card" data-categories="ml">
+    <div class="card-bar" style="background:linear-gradient(90deg,#dc2626,#f97316);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">✈️</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Predictive / ML</span>
+        </div>
+      </div>
+      <h3>TitanForge — Aerospace Predictive Maintenance <span class="muted" style="font-weight:400;">· 2026</span></h3>
+      <p class="card-desc">A 97%-accuracy failure-detection model was quietly missing ~80% of real failures. The fix, and the lesson, are documented in an interactive walkthrough.</p>
+      <ul>
+        <li>Found that <b>severe class imbalance</b> (3.48% failure rate) masked a real recall problem behind a misleadingly high weighted-accuracy score</li>
+        <li>Corrected with <b>class weighting and SMOTE</b>, raising failure recall from ~20% to 80%+</li>
+        <li>A tuned <b>Gradient Boosting</b> model remained the strongest performer on F1 after rebalancing — a better metric mattered more than a fancier algorithm</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Scikit-learn</span><span class="pill">SMOTE</span>
+        <span class="pill">Gradient Boosting</span><span class="pill">Streamlit</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://titan-forge.streamlit.app/" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Walkthrough</a>
+      <a href="https://github.com/ashokmedasani/Titan-Forge" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- 1 · 2026 — Independent full-stack platform (unnamed by choice) -->
+  <div class="card" data-categories="product data">
+    <div class="card-bar" style="background:linear-gradient(90deg,#1d4ed8,#3b82f6);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🧩</div>
+        <div class="card-badges">
+          <span class="badge badge-professional">Product</span>
+          <span class="badge badge-data">Cloud / AWS</span>
+        </div>
+      </div>
+      <h3>Independent Platform — Data Modeling, Cloud Infrastructure &amp; Product Analytics <span class="muted" style="font-weight:400;">· 2026</span></h3>
+      <p class="card-desc">A professional–client workflow platform I designed and built end to end — lead capture, client onboarding, tracking templates, scheduling, and payments. Currently in development.</p>
+      <ul>
+        <li>Designed a <b>47-entity relational data model</b> spanning leads, clients, scheduling, tracking, payments, and support — plus workflow logic, subscription tiering, permissions, and the complete UX</li>
+        <li>Instrumented a <b>product adoption funnel</b> measuring where users drop off across the journey — registration → profile → form → group → first client</li>
+        <li><b>Three permission-isolated surfaces</b>: professional portal, client portal, and an internal staff console with its own auth and role-based access control</li>
+        <li>Deployed on <b>AWS</b> (EC2, RDS, S3 + CloudFront, Elastic Beanstalk, IAM, CloudWatch) using <b>blue/green releases</b> validated in a parallel environment before cutover</li>
+        <li>Internal console built on <b>data-minimization principles</b> — staff see operational metadata only, with an immutable audit log capturing reads as well as writes</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Angular</span><span class="pill">Django / DRF</span><span class="pill">PostgreSQL</span>
+        <span class="pill">Flutter</span><span class="pill">AWS</span><span class="pill">Docker</span>
+        <span class="pill">GitHub Actions</span>
+      </div>
+      <p class="muted" style="margin-top:.6rem;font-size:.85rem;">Private project — walkthrough available on request.</p>
+    </div>
+  </div>
+
+  <!-- 2 · 2026 — AnyData Analytics -->
+  <div class="card" data-categories="data ai bi">
+    <div class="card-bar" style="background:linear-gradient(90deg,#0ea5e9,#8b5cf6);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">📊</div>
+        <div class="card-badges">
+          <span class="badge badge-data">Data Engineering</span>
+          <span class="badge badge-ai">Agentic AI</span>
+        </div>
+      </div>
+      <h3>AnyData Analytics — Instant Dashboard Generator <span class="muted" style="font-weight:400;">· 2026</span></h3>
+      <p class="card-desc">Upload a CSV, get a full interactive dashboard. No code, no setup, no paid API required.</p>
+      <ul>
+        <li>Automatic <b>profiling and type detection</b> — dates, numerics, booleans, categories, free text</li>
+        <li>Guided cleaning of missing values and duplicates, with manual column-type overrides</li>
+        <li><b>Ranks which columns actually relate to your target</b> using local ML and statistics</li>
+        <li>Agentic planning layer that reads your stated objective, with an optional LLM planner</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Streamlit</span><span class="pill">Plotly</span>
+        <span class="pill">ECharts</span><span class="pill">Scikit-learn</span><span class="pill">LLM APIs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 · 2026 — Connecticut Real Estate -->
+  <div class="card" data-categories="bi">
+    <div class="card-bar" style="background:linear-gradient(90deg,#f59e0b,#ef4444);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🏠</div>
+        <div class="card-badges">
+          <span class="badge badge-data">BI / Dashboards</span>
+        </div>
+      </div>
+      <h3>Connecticut Real Estate — 13 Years of Market Data <span class="muted" style="font-weight:400;">· 2026</span></h3>
+      <p class="card-desc">A Power BI dashboard covering every recorded transaction from 2009 to 2022, bridging the gap between estimated value and actual sale price.</p>
+      <ul>
+        <li>Analyzed <b>13 years of transactions</b> across sale price, assessed value, tax rates, and property type</li>
+        <li>Town-level and orientation slicers — compare a west-facing home in Fairfield against a north-facing one in Greenwich in two clicks</li>
+        <li>Surfaced statewide property tax trends over time</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Power BI</span><span class="pill">Data Modeling</span><span class="pill">DAX</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 · 2025–2026 — CareFinder -->
+  <div class="card" data-categories="ml data bi">
+    <div class="card-bar" style="background:linear-gradient(90deg,#2563eb,#0891b2);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🏥</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Predictive / ML</span>
+          <span class="badge badge-data">Data Engineering</span>
+        </div>
+      </div>
+      <h3>CareFinder — Hospital Cost Analysis &amp; Predictive Decision System <span class="muted" style="font-weight:400;">· 2025–2026</span></h3>
+      <p class="card-desc">Full-stack healthcare application that helps users find cost-effective hospitals for Type&nbsp;2 diabetes care, and forecasts what treatment will cost 24 months out. My M.S. Major Research Project.</p>
+      <ul>
+        <li>Predictive models forecasting patient visits and treatment cost using <b>Random Forest and XGBoost</b> (R² ≈ 0.60)</li>
+        <li><b>24-month time-series forecasting</b> to project future demand and spend</li>
+        <li>ETL pipelines integrating <b>10 synthetic Synthea datasets</b> (patients, encounters, claims, providers, payers) across four states into structured master tables</li>
+        <li>Interactive comparison dashboards via <b>Power BI, Plotly, and Chart.js</b></li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Django</span><span class="pill">SQL</span>
+        <span class="pill">Scikit-learn</span><span class="pill">XGBoost</span><span class="pill">Time Series</span>
+        <span class="pill">Plotly</span><span class="pill">Power BI</span>
+      </div>
+      <p class="muted" style="margin-top:.6rem;font-size:.85rem;">Live demo offline — hosted database expired. Walkthrough available on request.</p>
+    </div>
+    <div class="card-footer">
+      <a href="https://github.com/ashokmedasani/Major_Project_SLU" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- 5 · 2025–2026 — RAG Assistant -->
+  <div class="card" data-categories="ai">
+    <div class="card-bar" style="background:linear-gradient(90deg,#7c3aed,#ec4899);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🤖</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">GenAI</span>
+        </div>
+      </div>
+      <h3>Secure Business KPI Retrieval Assistant (RAG) <span class="muted" style="font-weight:400;">· 2025–2026</span></h3>
+      <p class="card-desc">RAG is easy to demo and hard to make trustworthy. This assistant answers strictly from enterprise documents — and refuses rather than hallucinating.</p>
+      <ul>
+        <li><b>Heading-based chunking</b> across enterprise documents to improve retrieval precision</li>
+        <li>Benchmarked <b>OpenAI vs MiniLM embeddings</b> — 0.65 vs 0.52 top similarity — showing open-source is viable at a fraction of the cost</li>
+        <li>Architected to decline unanswerable questions instead of fabricating responses</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">RAG</span><span class="pill">FAISS</span>
+        <span class="pill">Vector Embeddings</span><span class="pill">OpenAI API</span><span class="pill">MiniLM</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://huggingface.co/spaces/ashokmedasani/Business_Metrics_Knowledge_Assistant" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+    </div>
+  </div>
+
+  <!-- 6 · 2025 — Crack Detection -->
+  <div class="card" data-categories="ml ai">
+    <div class="card-bar" style="background:linear-gradient(90deg,#7c3aed,#0891b2);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🧱</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Deep Learning</span>
+        </div>
+      </div>
+      <h3>Concrete Crack Detection — CNN &amp; ResNet <span class="muted" style="font-weight:400;">· 2025</span></h3>
+      <p class="card-desc">Can a neural network spot structural cracks in concrete before an inspector does? Three architectures trained and benchmarked to find out.</p>
+      <ul>
+        <li>Trained <b>baseline CNN, BatchNorm CNN, and BatchNorm + augmentation</b> in PyTorch</li>
+        <li>Benchmarked against <b>ResNet transfer learning</b></li>
+        <li>Key finding: <b>augmentation mattered more than depth</b> — the augmented model generalized far better on unseen surfaces</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">PyTorch</span><span class="pill">CNN</span><span class="pill">ResNet</span>
+        <span class="pill">Gradio</span><span class="pill">Hugging Face</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://huggingface.co/spaces/ashokmedasani/Crack-Detection-CNN-ResNet" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
+      <a href="https://github.com/ashokmedasani/crack-detection-cnn" class="link-btn link-btn-secondary" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+    </div>
+  </div>
+
+  <!-- 7 · 2025 — Steel Clients -->
+  <div class="card" data-categories="ml bi">
+    <div class="card-bar" style="background:linear-gradient(90deg,#0891b2,#22c55e);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🏭</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">Predictive / ML</span>
+        </div>
+      </div>
+      <h3>Steel Manufacturing Client Purchase Prediction <span class="muted" style="font-weight:400;">· 2025</span></h3>
+      <p class="card-desc">What actually drives B2B purchasing on an order-to-purchase platform? Eight model families benchmarked to find the answer.</p>
+      <ul>
+        <li>Compared <b>OLS, Ridge, Lasso, Polynomial, Decision Tree, Random Forest, Gradient Boosting, and Neural Networks</b> on R², Adjusted R², RMSE, and MSE</li>
+        <li>Finding: <b>ensemble methods outperformed linear models</b>, indicating complex non-linear relationships in purchasing behavior</li>
+        <li>Built an interactive <b>Streamlit application</b> running the full workflow — preparation, EDA, training, and model comparison</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Scikit-learn</span><span class="pill">Streamlit</span>
+        <span class="pill">Ensemble Methods</span><span class="pill">EDA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 · 2021–2024 — BoA reporting automation -->
+  <div class="card" data-categories="data bi">
+    <div class="card-bar" style="background:linear-gradient(90deg,#334155,#64748b);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">⚙️</div>
+        <div class="card-badges">
+          <span class="badge badge-professional">Professional</span>
+          <span class="badge badge-data">Automation</span>
+        </div>
+      </div>
+      <h3>Reporting Automation Platform — Bank of America <span class="muted" style="font-weight:400;">· 2021–2024</span></h3>
+      <p class="card-desc">The project that started my move into analytics. Management reporting was rebuilt by hand every week from Jira and ITSM exports — so I automated the whole thing.</p>
+      <ul>
+        <li>Select a date range; the tool filters the exports, generates the full report, and renders the charts</li>
+        <li>Replaced a recurring manual process across management reporting, <b>saving 100+ operational hours per month</b></li>
+        <li>Extended into a web-based report generator with built-in visualizations</li>
+      </ul>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Python</span><span class="pill">Django</span><span class="pill">SQL</span>
+        <span class="pill">Excel Macros</span><span class="pill">Jira</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 · Hugging Face -->
+  <div class="card" data-categories="ai ml">
+    <div class="card-bar" style="background:linear-gradient(90deg,#f59e0b,#facc15);"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon">🤗</div>
+        <div class="card-badges">
+          <span class="badge badge-ai">AI / ML</span>
+        </div>
+      </div>
+      <h3>Hugging Face Portfolio</h3>
+      <p class="card-desc">Seven deployed Spaces and a published model — crack detection, RAG assistants, image classification, and utility tools.</p>
+      <div class="tech-label">Tech Stack</div>
+      <div class="pills">
+        <span class="pill">Hugging Face Spaces</span><span class="pill">Gradio</span>
+        <span class="pill">PyTorch</span><span class="pill">Model Deployment</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="https://huggingface.co/ashokmedasani" class="link-btn link-btn-primary" target="_blank" rel="noopener noreferrer">🔗 View Profile</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#projectsGrid .card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', function(){
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const f = this.dataset.filter;
+      cards.forEach(c => {
+        c.style.display = (f === 'all' || (c.dataset.categories || '').includes(f)) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>

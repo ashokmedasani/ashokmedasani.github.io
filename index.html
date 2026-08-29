@@ -1,90 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Ashok Medasani | Portfolio</title>
-  <meta name="description" content="Analytics Graduate | ML | DL | Python | SQL | Power BI"/>
+  <meta name="description" content="Ashok Medasani — AI/ML Engineer & Predictive Modeling. MS Analytics (SLU). Python, PyTorch, RAG, AWS, Machine Learning. Ex-Bank of America."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css"/>
+  <script>
+    // Apply saved theme before first paint to avoid a flash of the wrong theme
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', saved || 'dark');
+      } catch (e) { /* storage blocked — default stays dark */ }
+    })();
+  </script>
 </head>
-
 <body>
-  <!-- Subtle falling-icons background (left/right only) -->
+
+  <!-- Falling symbols rain -->
   <div id="iconRain" aria-hidden="true"></div>
 
   <div class="page">
 
-    <!-- Header WITHOUT cover -->
     <header class="header">
       <div class="container">
-
         <div class="profile-card">
 
-          <!-- Top: avatar | details | actions -->
+          <!-- Top row -->
           <div class="header-row">
+
             <div class="avatar">
-              <img src="assets/img/profile.jpeg" alt="Ashok Medasani" onerror="this.style.display='none'">
+              <img src="assets/img/profile.jpeg" alt="Ashok Medasani"
+                   onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';">
+              <div class="avatar-fallback" id="avatarFallback">AM</div>
             </div>
 
             <div class="details">
               <h1>Ashok Medasani</h1>
-              <p class="headline">
-                Analytics Graduate | Machine Learning, Deep Learning, Python, SQL, Power BI |
-                Predictive Modeling & Data-Driven Decision Making
-              </p>
+              <p class="title">AI / ML Engineer · Applied AI · Predictive Modeling</p>
+              <p class="headline">MS in Analytics, SLU &nbsp;|&nbsp; Python · PyTorch · RAG · AWS &nbsp;|&nbsp; Machine Learning · Computer Vision · GenAI</p>
             </div>
 
             <div class="top-actions">
+              <button class="theme-toggle" id="themeToggle" type="button"
+                      aria-label="Toggle light and dark mode" title="Toggle light / dark mode">🌙</button>
               <a class="btn" target="_blank" rel="noopener noreferrer" href="https://github.com/ashokmedasani">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="currentColor"
-                    d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.44 7.86 10.97.57.1.78-.25.78-.55v-1.95c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.78 2.7 1.26 3.36.96.1-.76.4-1.26.72-1.55-2.55-.3-5.23-1.28-5.23-5.68 0-1.25.44-2.27 1.17-3.07-.12-.3-.5-1.52.11-3.16 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.61 1.64.23 2.86.11 3.16.73.8 1.17 1.82 1.17 3.07 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A11.52 11.52 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
+                  <path fill="currentColor" d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.44 7.86 10.97.57.1.78-.25.78-.55v-1.95c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.78 2.7 1.26 3.36.96.1-.76.4-1.26.72-1.55-2.55-.3-5.23-1.28-5.23-5.68 0-1.25.44-2.27 1.17-3.07-.12-.3-.5-1.52.11-3.16 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.61 1.64.23 2.86.11 3.16.73.8 1.17 1.82 1.17 3.07 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A11.52 11.52 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
                 </svg>
                 GitHub
               </a>
-
               <a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ashok-medasani/">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="currentColor"
-                    d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48c0 1.63 1.34 2.97 2.98 2.97a2.98 2.98 0 1 0 0-5.95zM2.5 21.5h4.96V9H2.5v12.5zM9.5 9h4.75v1.71h.07c.66-1.25 2.27-2.57 4.67-2.57 5 0 5.92 3.29 5.92 7.56v5.8h-4.96v-5.15c0-1.23-.02-2.82-1.72-2.82-1.73 0-2 1.34-2 2.73v5.24H9.5V9z"/>
+                  <path fill="currentColor" d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48c0 1.63 1.34 2.97 2.98 2.97a2.98 2.98 0 1 0 0-5.95zM2.5 21.5h4.96V9H2.5v12.5zM9.5 9h4.75v1.71h.07c.66-1.25 2.27-2.57 4.67-2.57 5 0 5.92 3.29 5.92 7.56v5.8h-4.96v-5.15c0-1.23-.02-2.82-1.72-2.82-1.73 0-2 1.34-2 2.73v5.24H9.5V9z"/>
                 </svg>
                 LinkedIn
               </a>
-
               <a class="btn" target="_blank" rel="noopener noreferrer" href="https://huggingface.co/ashokmedasani">
                 🤗 Hugging Face
               </a>
+              <a class="btn btn-primary" target="_blank" rel="noopener noreferrer"
+                 href="assets/docs/Ashok_Medasani_Resume.pdf">
+                📄 Resume
+              </a>
             </div>
+
           </div>
 
           <!-- Contact row -->
           <div class="contact-row">
-            <a class="contact-item" href="#" aria-label="Location">📍 <span>St. Louis, MO</span></a>
-            <a class="contact-item" href="tel:+13147739963" aria-label="Phone">📞 <span>(314) 773-9963</span></a>
-            <a class="contact-item" href="mailto:medasaniashok4@gmail.com" aria-label="Email">✉️ <span>medasaniashok4@gmail.com</span></a>
+            <span class="contact-item">📍 <span>St. Louis, MO · Open to Relocation</span></span>
+            <a class="contact-item" href="tel:+13147739963">📞 <span>(314) 773-9963</span></a>
+            <a class="contact-item" href="mailto:medasaniashok4@gmail.com">✉️ <span>medasaniashok4@gmail.com</span></a>
           </div>
 
           <!-- About -->
           <div class="about-block">
             <h2>About</h2>
-            <p>Hi, I’m Ashok Medasani. I am currently pursuing my Master’s in Analytics at Saint Louis University and am actively seeking a full-time opportunity in the IT sector.
-
-            </p><p>I have hands-on exposure to working with technology systems, data, and analytical tools, and I enjoy understanding how different components of a system connect—ranging from applications and databases to data-driven decision making. Over time, I’ve developed a strong interest in solving problems using technology, data, and logical thinking, especially in environments where reliability and efficiency are critical.
-
-            </p><p>I believe in continuous learning and enjoy exploring new tools and technologies that help simplify complex problems into practical solutions. Outside of work and academics, I like spending time with friends, exploring new places, and camping near lakes, which helps me stay relaxed and focused.
-
-            </p><p>If you’d like to learn more about my work and interests, feel free to explore my projects, which reflect the areas I’m most passionate about.
-            </p>
-            <div class="resume-callout">
-              <div class="resume-left">
-                <div class="resume-title">📄 Resume</div>
-                <div class="resume-sub">Download or view my latest resume</div>
-              </div>
-              <a class="resume-btn" target="_blank" rel="noopener noreferrer"
-                 href="https://drive.google.com/file/d/1v_hIILN3yptuAs_rigy5gWc1_p85a1Dx/view?usp=drive_link">
-                View Resume
-              </a>
-            </div>
+            <p>I'm Ashok Medasani — a data and analytics professional with an M.S. in Analytics from Saint Louis University and 4+ years of experience across banking technology and analytics.</p>
+            <p>I started in banking infrastructure at Bank of America, supporting HP NonStop systems behind card and transaction processing. Two things pushed me toward analytics. The first was impatience with manual work: internal audit reporting was rebuilt by hand every week, so I automated it — pick a date range, get the report with the charts already built. That saved 100+ operational hours a month and led to my role as change/QA subject matter expert, which I went on to lead with a team of 15.</p>
+            <p>The second was more interesting. Our system alerts looked random, but they weren't — after a change went in, the alerts it caused often surfaced <i>later</i> rather than immediately. I kept thinking: this is a pattern, so why are we reacting to it instead of predicting it? I didn't have the tools then. That question is what brought me here.</p>
+            <p>Since then I've built <b>CareFinder</b>, a Django healthcare application forecasting hospital cost and patient visits with Random Forest and XGBoost across ten integrated datasets; trained and deployed CNNs; shipped a RAG assistant benchmarking embedding strategies; and designed and deployed a full multi-surface platform on AWS. I'm currently extending into <b>symbolic regression research</b> under a professor at Saint Louis University. My top focus now is <b>AI/ML Engineer and Applied AI roles</b> — alongside data analytics, data science, and analytics engineering, where I have the same depth.</p>
+            <p>Outside of work, I enjoy playing chess, exploring new places, and spending time with friends — it keeps me grounded and thinking clearly.</p>
           </div>
 
           <!-- Tabs -->
@@ -97,93 +98,28 @@
             <button class="tab" data-file="sections/certifications.html">Certifications</button>
           </div>
 
-        </div> <!-- /profile-card -->
-
-      </div> <!-- /container -->
+        </div>
+      </div>
     </header>
 
-    <!-- Content -->
     <main class="main">
       <div class="container">
         <div class="section-card">
           <div class="section-inner" id="content">
-            <!-- Default content that will be loaded when page opens -->
-            <h2>Welcome to My Portfolio</h2>
-            <p>Click on any tab above to view the corresponding section content.</p>
-            <p>Content will be dynamically loaded here.</p>
+            <p class="muted">Loading...</p>
           </div>
         </div>
       </div>
     </main>
 
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Ashok Medasani</p>
+      </div>
+    </footer>
+
   </div>
 
-  <!-- Add this JavaScript directly to test if it works -->
-  <script>
-    // Add falling icons dynamically
-    document.addEventListener('DOMContentLoaded', function() {
-      const iconRain = document.getElementById('iconRain');
-      const icons = ['{', '}', '<', '>', ';', '(', ')', '[', ']', '/', '*', '=', '+', '-', '|', '&', '%', '$', '#', '@', '!', '?', ':', '"', "'"];
-      
-      // Create 40 icons
-      for (let i = 0; i < 40; i++) {
-        const icon = document.createElement('div');
-        icon.className = 'rain-icon';
-        icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-        icon.style.left = Math.random() * 100 + '%';
-        icon.style.fontSize = (Math.random() * 20 + 10) + 'px';
-        icon.style.animationDuration = (Math.random() * 10 + 15) + 's';
-        icon.style.animationDelay = Math.random() * 5 + 's';
-        iconRain.appendChild(icon);
-      }
-      
-      // Tab switching functionality
-      const tabs = document.querySelectorAll('.tab');
-      const contentDiv = document.getElementById('content');
-      
-      function loadContent(filePath) {
-        fetch(filePath)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('File not found: ' + filePath);
-            }
-            return response.text();
-          })
-          .then(html => {
-            contentDiv.innerHTML = html;
-          })
-          .catch(error => {
-            console.error('Error loading content:', error);
-            contentDiv.innerHTML = `
-              <h2>Content Not Found</h2>
-              <p>The requested file "${filePath}" could not be loaded.</p>
-              <p>Please check if the file exists in the "sections" folder.</p>
-            `;
-          });
-      }
-      
-      // Add click handlers to tabs
-      tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-          // Remove active class from all tabs
-          tabs.forEach(t => t.classList.remove('active'));
-          // Add active class to clicked tab
-          this.classList.add('active');
-          // Load content
-          const file = this.getAttribute('data-file');
-          loadContent(file);
-        });
-      });
-      
-      // Load summary content by default
-      const activeTab = document.querySelector('.tab.active');
-      if (activeTab) {
-        loadContent(activeTab.getAttribute('data-file'));
-      }
-    });
-  </script>
-  
-  <!-- You can still keep your external JS file if needed -->
   <script src="assets/js/app.js"></script>
 </body>
 </html>
